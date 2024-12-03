@@ -13,7 +13,7 @@ class ThemeGeneratorCommand extends Command
      *
      * @var string
      */
-    protected $name = 'theme:make';
+    protected $name = 'theme:make {name}';
 
     /**
      * The console command description.
@@ -21,10 +21,6 @@ class ThemeGeneratorCommand extends Command
      * @var string
      */
     protected $description = 'Create a new theme.';
-
-
-    protected $argumentName = 'name';
-
 
     public function handle() {
         // $this->call('theme:make-controller abc' );    

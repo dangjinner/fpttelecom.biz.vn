@@ -12,8 +12,9 @@ class Theme
     {
         $array = [];
         $themes = app('stylist')->themes();
+
         foreach ($themes as $key => $value) {
-            $array[ $value->getName() ] = 'Webmaster'; //$value->getName()
+            $array[ $value->getName() ] = $value->getName(); //$value->getName()
         }
         return $array;
     }
