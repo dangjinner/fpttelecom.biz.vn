@@ -1,1 +1,0 @@
-@include('v2.layout.mix_layout')

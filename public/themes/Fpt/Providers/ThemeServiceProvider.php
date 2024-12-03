@@ -1,6 +1,6 @@
 <?php
 
-namespace Themes\FPT\Providers;
+namespace Themes\Fpt\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
