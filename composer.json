@@ -28,6 +28,7 @@
 		"guzzlehttp/guzzle": "7.2.0",
 		"guzzlehttp/promises": "1.4.0",
 		"guzzlehttp/psr7": "1.7.0",
+		"hoangphi/vietnam-maps": "^1.3",
 		"instamojo/instamojo-php": "1.0",
 		"intervention/image": "^2.5",
 		"jackiedo/dotenv-editor": "^1.0",
@@ -114,6 +115,9 @@
 		"preferred-install": "dist",
 		"platform": {
 			"php": "7.3.0"
+		},
+		"allow-plugins": {
+			"wikimedia/composer-merge-plugin": true
 		}
 	},
 	"extra": {

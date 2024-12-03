@@ -22,7 +22,7 @@ class AutoLinkServiceProvider extends ServiceProvider
         TabManager::register('auto_links', AutoLinkTabs::class);
 
         $this->addAdminAssets('admin.auto_links.(create|edit)', [
-            'admin.media.css', 'admin.media.js', 'admin.brand.js',
+            'admin.media.css', 'admin.media.js',
         ]);
     }
 

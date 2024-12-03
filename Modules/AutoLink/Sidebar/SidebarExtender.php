@@ -14,21 +14,11 @@ class SidebarExtender extends BaseSidebarExtender
         $menu->group(trans('admin::sidebar.content'), function (Group $group) {
             $group->item(trans('autolink::auto_links.auto_links'), function (Item $item) {
                 $item->icon('fa fa-link');
+                $item->route('admin.auto_links.index');
                 $item->weight(0);
                 $item->authorize(
-                    /* append */
+                    $this->auth->hasAccess('admin.auto_links.index')
                 );
-
-                $item->item(trans('autolink::auto_links.auto_links'), function (Item $item) {
-                    $item->weight(5);
-                    $item->route('admin.auto_links.index');
-                    $item->authorize(
-                        $this->auth->hasAccess('admin.auto_links.index')
-                    );
-                });
-
-// append
-
             });
         });
     }

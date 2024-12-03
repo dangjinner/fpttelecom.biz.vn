@@ -11,16 +11,16 @@ class SidebarExtender extends BaseSidebarExtender
 {
     public function extend(Menu $menu)
     {
-        // $menu->group(trans('admin::sidebar.content'), function (Group $group) {
-        //     $group->item(trans('area::areas.areas'), function (Item $item) {
-        //          $item->item(trans('province::provinces.provinces'), function (Item $item) {
-        //             $item->weight(5);
-        //             $item->route('admin.provinces.index');
-        //             $item->authorize(
-        //                 $this->auth->hasAccess('admin.provinces.index')
-        //             );
-        //         });
-        //     });
-        // });
+         $menu->group(trans('admin::sidebar.content'), function (Group $group) {
+             $group->item(trans('area::areas.areas'), function (Item $item) {
+                  $item->item(trans('province::provinces.provinces'), function (Item $item) {
+                     $item->weight(5);
+                     $item->route('admin.provinces.index');
+                     $item->authorize(
+                         $this->auth->hasAccess('admin.provinces.index')
+                     );
+                 });
+             });
+         });
     }
 }
