@@ -22,6 +22,8 @@ class FptViewComposer
             'footerLogo' => $this->getMedia(setting('fpt_footer_logo')),
             'favicon' => $this->getMedia(setting('fpt_favicon')),
             'primaryMenu' => $this->getPrimaryMenu(),
+            'noticeGovImage' => $this->getMedia(setting('fpt_footer_noticed_gov_image')),
+            'footerMenu' => $this->getFooterMenu(),
         ]);
     }
 
@@ -35,5 +37,10 @@ class FptViewComposer
     private function getPrimaryMenu()
     {
         return new MegaMenu(setting('fpt_primary_menu'));
+    }
+
+    private function getFooterMenu()
+    {
+        return new MegaMenu(setting('fpt_footer_menu'));
     }
 }

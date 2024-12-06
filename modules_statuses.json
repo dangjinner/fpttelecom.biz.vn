@@ -32,7 +32,7 @@
     "FlashSale": false,
     "Brand": false,
     "Newsletter": true,
-    "Tag": false,
+    "Tag": true,
     "Import": true,
     "Address": true,
     "Post": true,

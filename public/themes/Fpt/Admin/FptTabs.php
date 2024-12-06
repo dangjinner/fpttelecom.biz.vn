@@ -115,7 +115,7 @@ class FptTabs extends Tabs
             $tab->weight(17);
             $tab->view('admin.fpt.tabs.footer', [
                 'tags' => Tag::list(),
-                'acceptedPaymentMethodsImage' => $this->getMedia(setting('fpt_accepted_payment_methods_image')),
+                'noticedGovImage' => $this->getMedia(setting('fpt_footer_noticed_gov_image')),
             ]);
         });
     }
@@ -138,7 +138,6 @@ class FptTabs extends Tabs
                 'fpt_instagram_link',
                 'fpt_linkedin_link',
                 'fpt_pinterest_link',
-                'fpt_gplus_link',
                 'fpt_youtube_link',
             ]);
 

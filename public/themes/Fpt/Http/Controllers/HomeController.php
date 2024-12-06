@@ -2,6 +2,8 @@
 
 namespace Themes\Fpt\Http\Controllers;
 
+use Modules\Post\Entities\Post;
+
 class HomeController
 {
     /**
@@ -11,7 +13,10 @@ class HomeController
      */
     public function index()
     {
-        return view('public.home.' . setting('home_switcher'));
+        $posts = Post::latest()->limit(8)->get();
+        return view('public.home.' . setting('home_switcher'), [
+            'posts' => $posts,
+        ]);
     }
 }
 

@@ -61,6 +61,16 @@ return [
         'home_page_feature_desc' => 'Description',
         'home_page_feature_logo' => 'Logo',
         'home_page_feature_url' => 'URL',
+        'home_page_promotion_slider' => 'Promotion',
+        'home_page_internet_packages_slider' => 'Internet Packages',
+        'fpt_footer_right' => 'Footer Right',
+        'fpt_footer_noticed_gov_image' => 'Noticed Government Image',
+        'fpt_footer_noticed_gov_url' => 'Noticed Government URL',
+        'fpt_facebook_link' => 'Facebook',
+        'fpt_twitter_link' => 'Twitter',
+        'fpt_instagram_link' => 'Instagram',
+        'fpt_youtube_link' => 'Youtube',
+        'fpt_zalo_link' => 'Zalo',
     ],
     'tabs' => [
         'group' => [

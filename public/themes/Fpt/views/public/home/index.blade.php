@@ -162,37 +162,13 @@
         <div class="container">
             <div class="box_internet">
                 <div class="slider_internet">
-                    <div class="internet_item">
-                        <a href="#">
-                            <img src="{{ v(Theme::url('assets/img/internet/product-link1.png')) }}" alt="">
-                        </a>
-                    </div>
-                    <div class="internet_item">
-                        <a href="#">
-                            <img src="{{ v(Theme::url('assets/img/internet/product-link1.png')) }}" alt="">
-                        </a>
-                    </div>
-                    <div class="internet_item">
-                        <a href="#">
-                            <img src="{{ v(Theme::url('assets/img/internet/product-link1.png')) }}" alt="">
-                        </a>
-                    </div>
-                    <div class="internet_item">
-                        <a href="#">
-                            <img src="{{ v(Theme::url('assets/img/internet/product-link1.png')) }}" alt="">
-                        </a>
-                    </div>
-                    <div class="internet_item">
-                        <a href="#">
-                            <img src="{{ v(Theme::url('assets/img/internet/product-link1.png')) }}" alt="">
-                        </a>
-                    </div>
-                    <div class="internet_item">
-                        <a href="#">
-                            <img src="{{ v(Theme::url('assets/img/internet/product-link1.png')) }}" alt="">
-                        </a>
-                    </div>
-
+                    @foreach($internetPackagesSlider->slides as $slide)
+                        <div class="internet_item">
+                            <a href="{{ $slide->call_to_action_url }}">
+                                <img src="{{ $slide->file->path }}" alt="{{ $slide->caption_1 }}">
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -200,17 +176,22 @@
     <div class="block-quangcao">
         <div class="box_quangcao">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="quangcao_right">
-                        <a href="#">
-                            <img src="{{ v(Theme::url('assets/img/banner/fpt-wifi-6-ket-noi-sieu-vuot-troi.jpg')) }}" alt="">
-                        </a>
+                @if(isset($promotionSlider->slides[0]))
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="quangcao_right">
+                            <a href="{{ $promotionSlider->slides[0]->call_to_action_url }}">
+                                <img src="{{ $promotionSlider->slides[0]->file->path }}" alt="{{ $promotionSlider->slides[0]->caption_1 }}">
+                            </a>
+                        </div>
                     </div>
-                </div>
+                @endif
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="quangcao_left">
-                        <a href="#"><img src="{{ v(Theme::url('assets/img/banner/tiktok-fpt-live-qua-bay-ve-nha.jpg')) }}" alt=""></a>
-                        <a href="#"><img src="{{ v(Theme::url('assets/img/banner/2_708x228_2.jpg')) }}" alt=""></a>
+                        @foreach($promotionSlider->slides as $pIndex => $pSlide)
+                            @if($pIndex > 0)
+                                <a href="{{ $pSlide->call_to_action_url }}"><img src="{{ $pSlide->file->path }}" alt="{{ $pSlide->caption_1 }}"></a>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -224,94 +205,19 @@
             </div>
             <div class="box_news">
                 <div class="list_news">
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news_item col-news">
-                        <a href="#">
-                            <div class="img">
-                                <img src="{{ v(Theme::url('assets/img/news/news-1.png')) }}" alt="">
-                            </div>
-                            <div class="new_title">
-                                <h4>Tham gia “Giới thiệu bạn bè” cùng FPT lan tỏa kết nối, nhận thưởng hấp dẫn</h4>
-                                <span>Xem thêm</span>
-                            </div>
-                        </a>
-                    </div>
+                    @foreach($posts as $post)
+                        <div class="news_item col-news">
+                            <a href="#">
+                                <div class="img">
+                                    <img src="{{ $post->logo->path }}" alt="{{ $post->name }}">
+                                </div>
+                                <div class="new_title">
+                                    <h4>{{ $post->name }}</h4>
+                                    <span>Xem thêm</span>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="new_btn">
                     <a href="#"> Xem tất cả <img src="{{ v(Theme::url('assets/img/icon/arrow-more.svg')) }}" alt=""></a>

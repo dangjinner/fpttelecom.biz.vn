@@ -12,7 +12,7 @@
         extraPlugins: "imageresize, contents",
     });
 
-    CKEDITOR.plugins.addExternal('contents', '{{ Theme::url("assets/js/ckeditor4.25/plugins/toc/plugin.js") }}');
+    CKEDITOR.plugins.addExternal('contents', '{{ Theme::url("assets/ckeditor-4.25/plugins/toc/plugin.js") }}');
 
     CKEDITOR.on('dialogDefinition', function (evt) {
         var dialog = evt.data;

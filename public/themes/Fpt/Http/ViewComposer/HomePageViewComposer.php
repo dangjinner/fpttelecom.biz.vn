@@ -21,7 +21,9 @@ class HomePageViewComposer
         $view->with([
             'banner' => Slider::findWithSlides(setting('home_page_banner')),
             'mobileBanner' => Slider::findWithSlides(setting('home_page_mobile_banner')),
-            'features' => $this->getFeatures()
+            'features' => $this->getFeatures(),
+            'promotionSlider' => Slider::findWithSlides(setting('home_page_promotion_slider')),
+            'internetPackagesSlider' => Slider::findWithSlides(setting('home_page_internet_packages_slider')),
         ]);
     }
 
