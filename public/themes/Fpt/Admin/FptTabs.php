@@ -18,20 +18,21 @@ class FptTabs extends Tabs
      * Make new tabs with groups.
      *
      * @return void
-    */
+     */
 
     public function make()
     {
-        // $this->group('general_settings', trans('fpt::fpt.tabs.group.general_settings'))
-        //     ->active()
-        //     ->add($this->general())
-        //     ->add($this->logo())
-        //     ->add($this->menus())
-        //     ->add($this->footer())
-        //     ->add($this->newsletter())
-        //     ->add($this->features())
-        //     ->add($this->productPage())
-        //     ->add($this->socialLinks());
+        $this->group('general_settings', trans('fpt::fpt.tabs.group.general_settings'))
+            ->active()
+            ->add($this->general())
+            ->add($this->logo())
+            ->add($this->menus())
+            ->add($this->footer())
+            ->add($this->socialLinks());
+
+        $this->group('home_page_settings', trans('fpt::fpt.tabs.group.home_page_settings'))
+            ->add($this->getHomePageBanner())
+            ->add($this->getHomePageFeatures());
 
     }
 
@@ -53,7 +54,7 @@ class FptTabs extends Tabs
     {
         $homes = [];
         foreach (\File::glob(app('stylist')->current()->getPath() . '/views/public/home/*.blade.php') as $filename) {
-            $name = basename($filename,'.blade.php');
+            $name = basename($filename, '.blade.php');
             $homes[$name] = $name;
         }
         return $homes;
@@ -119,42 +120,10 @@ class FptTabs extends Tabs
         });
     }
 
-    private function newsletter()
-    {
-        if (! setting('newsletter_enabled')) {
-            return;
-        }
-
-        return tap(new Tab('newsletter', trans('fpt::fpt.tabs.newsletter')), function (Tab $tab) {
-            $tab->weight(18);
-            $tab->view('admin.fpt.tabs.newsletter', [
-                'newsletterBgImage' => $this->getMedia(setting('fpt_newsletter_bg_image')),
-            ]);
-        });
-    }
-
     private function getMedia($fileId)
     {
         return Cache::rememberForever(md5("files.{$fileId}"), function () use ($fileId) {
             return File::findOrNew($fileId);
-        });
-    }
-
-    private function features()
-    {
-        return tap(new Tab('features', trans('fpt::fpt.tabs.features')), function (Tab $tab) {
-            $tab->weight(20);
-            $tab->view('admin.fpt.tabs.features');
-        });
-    }
-
-    private function productPage()
-    {
-        return tap(new Tab('product_page', trans('fpt::fpt.tabs.product_page')), function (Tab $tab) {
-            $tab->weight(22);
-            $tab->view('admin.fpt.tabs.product_page', [
-                'banner' => Banner::getProductPageBanner(),
-            ]);
         });
     }
 
@@ -177,4 +146,28 @@ class FptTabs extends Tabs
         });
     }
 
+    public function getHomePageBanner()
+    {
+        return tap(new Tab('home_page_banner', trans('fpt::fpt.tabs.home_page.banner')), function (Tab $tab) {
+            $tab->weight(1);
+            $tab->view('admin.fpt.tabs.home.banner', [
+            ]);
+        });
+    }
+
+    public function getHomePageFeatures()
+    {
+        $featureLogos = [];
+
+        for ($i = 1; $i <= 5; $i++) {
+            $featureLogos[$i] = $this->getMedia(setting("home_page_feature_{$i}_logo"));
+        }
+
+        return tap(new Tab('home_page_features', trans('fpt::fpt.tabs.home_page.features')), function (Tab $tab) use ($featureLogos) {
+            $tab->weight(2);
+            $tab->view('admin.fpt.tabs.home.features', [
+                'featureLogos' => $featureLogos
+            ]);
+        });
+    }
 }

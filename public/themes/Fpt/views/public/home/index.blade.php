@@ -4,87 +4,35 @@
     <div class="main_banner">
         <div class="banner_slider">
             <ul class="slider_item">
-                <li>
-                    <a href="#" class="destop"><img src="{{ v(Theme::url('assets/img/banner/banner-f-game-ultra-fast-fpt.jpg')) }}"
-                                                    alt=""></a>
-                    <a href="#" class="mobile"><img src="{{ v(Theme::url('assets/img/banner/banner_mobile-1.png')) }}" alt=""></a>
-                </li>
-                <li>
-                    <a href="#" class="destop"><img src="{{ v(Theme::url('assets/img/banner/banner_dkol.jpg')) }}" alt=""></a>
-                    <a href="#" class="mobile"><img src="{{ v(Theme::url('assets/img/banner/banner_mobile-1.png')) }}" alt=""></a>
-                </li>
-                <li>
-                    <a href="#" class="destop"><img src="{{ v(Theme::url('assets/img/banner/banner-f-game-ultra-fast-fpt.jpg')) }}"
-                                                    alt=""></a>
-                    <a href="#" class="mobile"><img src="{{ v(Theme::url('assets/img/banner/banner_mobile-1.png')) }}" alt=""></a>
-                </li>
-                <li>
-                    <a href="#" class="destop"><img src="{{ v(Theme::url('assets/img/banner/goi-internet-giga-fpt-1.jpg')) }}" alt=""></a>
-                    <a href="#" class="mobile"><img src="{{ v(Theme::url('assets/img/banner/banner_mobile-1.png')) }}" alt=""></a>
-                </li>
+                @foreach($banner->slides as $slide)
+                    <li>
+                        <a href="{{ $slide->call_to_action_url }}" @if($slide->open_in_new_window) target="_blank" @endif class="destop"><img src="{{ $slide->file->path }}"
+                                                        alt="{{ $slide->caption_1 }}"></a>
+                        <a href="{{ $slide->call_to_action_url }}" @if($slide->open_in_new_window) target="_blank" @endif class="mobile"><img src="{{ $slide->file->path }}" alt="{{ $slide->caption_1 }}"></a>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>
     <div class="main_benefit">
         <div class="container">
             <div class="row benefit_bt">
-                <div class="col-lg-3 col-md-6 col-12 box_benefit">
-                    <div class="benefit_list">
-                        <a href="#">
-                            <div class="img"><img src="{{ v(Theme::url('assets/img/icon/icon-shop.png')) }}" alt=""></div>
-                            <div class="text">
-                                <span>1.000+</span>
-                                <p>Cửa hàng trên toàn quốc</p>
-                            </div>
-                            <div class="arrow">
-                                <img src="{{ v(Theme::url('assets/img/arrow-right-black.svg')) }}" alt="">
-                            </div>
-                        </a>
+                @foreach($features as $feature)
+                    <div class="col-lg-3 col-md-6 col-12 box_benefit">
+                        <div class="benefit_list">
+                            <a href="{{ $feature['url'] }}">
+                                <div class="img"><img src="{{ $feature['logo']->path }}" alt="{{ $feature['name'] }}"></div>
+                                <div class="text">
+                                    <span>{{ $feature['name'] }}</span>
+                                    <p>{{ $feature['desc'] }}</p>
+                                </div>
+                                <div class="arrow">
+                                    <img src="{{ v(Theme::url('assets/img/arrow-right-black.svg')) }}" alt="">
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 box_benefit">
-                    <div class="benefit_list">
-                        <a href="#">
-                            <div class="img"><img src="{{ v(Theme::url('assets/img/icon/icon-point.png')) }}" alt=""></div>
-                            <div class="text">
-                                <span>Tích điểm</span>
-                                <p>Siêu tiện lợi & dễ dàng</p>
-                            </div>
-                            <div class="arrow">
-                                <img src="{{ v(Theme::url('assets/img/arrow-right-black.svg')) }}" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 box_benefit">
-                    <div class="benefit_list">
-                        <a href="#">
-                            <div class="img"><img src="{{ v(Theme::url('assets/img/icon/icon-payment.png')) }}" alt=""></div>
-                            <div class="text">
-                                <span>Thanh toán online</span>
-                                <p>Nhanh chóng & an toàn</p>
-                            </div>
-                            <div class="arrow">
-                                <img src="{{ v(Theme::url('assets/img/arrow-right-black.svg')) }}" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 box_benefit">
-                    <div class="benefit_list">
-                        <a href="#">
-                            <div class="img"><img src="{{ v(Theme::url('assets/img/icon/icon-promotion.png')) }}" alt=""></div>
-                            <div class="text">
-                                <span>Khuyến mại</span>
-                                <p>Vô vàn & hấp dẫn</p>
-                            </div>
-                            <div class="arrow">
-                                <img src="{{ v(Theme::url('assets/img/arrow-right-black.svg')) }}" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </div>

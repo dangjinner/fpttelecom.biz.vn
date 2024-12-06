@@ -5,6 +5,7 @@ return [
     'form' => [
         'favicon' => 'Favicon',
         'header_logo' => 'Header Logo',
+        'footer_logo' => 'Footer Logo',
         'mail_logo' => 'Mail Logo',
         'accepted_payment_methods_image' => 'Accepted Payment Methods Image',
         'newsletter_bg_image' => 'Background Image',
@@ -52,12 +53,21 @@ return [
         'vertical_products_1' => 'Vertical Products 1',
         'vertical_products_2' => 'Vertical Products 2',
         'vertical_products_3' => 'Vertical Products 3',
+        'fpt_primary_menu' => 'Primary Menu',
+        'fpt_footer_menu' => 'Footer Menu',
+        'home_page_banner' => 'Banner',
+        'home_page_mobile_banner' => 'Mobile Banner',
+        'home_page_feature_name' => 'Name',
+        'home_page_feature_desc' => 'Description',
+        'home_page_feature_logo' => 'Logo',
+        'home_page_feature_url' => 'URL',
     ],
     'tabs' => [
         'group' => [
             'general_settings' => 'General Settings',
             'home_1' => 'Home 1',
             'home_2' => 'Home 2',
+            'home_page_settings' => 'Home Page'
         ],
         'general' => 'General',
         'logo' => 'Logo',
@@ -78,5 +88,9 @@ return [
         'three_column_banners' => 'Three Column Banners',
         'product_tabs_two' => 'Product Tabs Two',
         'one_column_banner' => 'One Column Banner',
+        'home_page' => [
+            'banner' => 'Banner',
+            'features' => 'Features',
+        ],
     ],
 ];

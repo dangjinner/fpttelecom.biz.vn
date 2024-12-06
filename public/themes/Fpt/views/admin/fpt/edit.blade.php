@@ -11,11 +11,11 @@
     </ol>
 @endsection
 
-{{-- @section('content')
+@section('content')
     <form method="POST" action="{{ route('admin.fpt.settings.update') }}" class="form-horizontal" id="fpt-settings-edit-form" novalidate>
         {{ csrf_field() }}
         {{ method_field('put') }}
 
         {!! $tabs->render(compact('settings')) !!}
     </form>
-@endsection --}}
+@endsection

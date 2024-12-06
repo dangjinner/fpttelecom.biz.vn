@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="footer_top">
             <div class="footer_top-img">
-                <a href="#"><img src="{{ v(Theme::url('assets/img/fpt-logo.svg')) }}" alt=""></a>
+                <a href="/"><img src="{{ $footerLogo->path }}" alt="footer logo"></a>
             </div>
             <div class="icon_netword">
                 <ul>
