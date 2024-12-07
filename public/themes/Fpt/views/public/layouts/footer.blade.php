@@ -78,12 +78,12 @@
 <div class="box_contact-scroll">
     <div class="scroll_contact">
         <ul>
-            <li class="cart"><a href="#"><img src="{{ v(Theme::url('assets/img/icon/icon-face-new.png')) }}" alt=""></a></li>
-            <li class="chat"><a href="#"><img src="{{ v(Theme::url('assets/img/icon/icon-face-new.png')) }}" alt=""></a></li>
-            <li class="call"><a href="#"><img src="{{ v(Theme::url('assets/img/icon/icon-call-new.png')) }}" alt=""></a></li>
+            <li class="cart"><a href="{{setting('fpt_contact_messenger')}}"><img src="{{ v(Theme::url('assets/img/icon/icon-face-new.png')) }}" alt="Messenger"></a></li>
+            <li class="chat"><a href="#"><img src="{{ v(Theme::url('assets/img/icon/icon-live-chat-new.png')) }}" alt="Chat"></a></li>
+            <li class="call"><a href="tel:{{setting('fpt_contact_phone')}}"><img src="{{ v(Theme::url('assets/img/icon/icon-call-new.png')) }}" alt="Phone Contact"></a></li>
         </ul>
     </div>
     <div class="croll-top">
-        <a href="#"><img src="{{ v(Theme::url('assets/img/top.svg')) }}" alt=""></a>
+        <a href="#"><img src="{{ v(Theme::url('assets/img/top.svg')) }}" alt="scroll to top"></a>
     </div>
 </div>

@@ -71,6 +71,9 @@ return [
         'fpt_instagram_link' => 'Instagram',
         'fpt_youtube_link' => 'Youtube',
         'fpt_zalo_link' => 'Zalo',
+        'fpt_contact_messenger' => 'Contact Messenger',
+        'fpt_contact_chat' => 'Contact Chat',
+        'fpt_contact_phone' => 'Contact Phone',
     ],
     'tabs' => [
         'group' => [
