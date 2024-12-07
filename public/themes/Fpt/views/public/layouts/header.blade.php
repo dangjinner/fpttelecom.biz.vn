@@ -50,7 +50,7 @@
                                                 @if($hasSubMenuItem)
                                                     <li class="megamenu_title">
                                                         <a href="#"> <span class="icon-sub"><img
-                                                                        src="{{ v(Theme::url('assets/img/icon/icon-internet-fpt.png')) }}"
+                                                                        src="{{ $subMenu->backgroundImage()->path }}"
                                                                         alt=""></span> <span
                                                                     class="title_sub">{{ $subMenu->name() }}</span></a></li>
                                                 @else

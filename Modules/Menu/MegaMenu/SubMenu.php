@@ -43,6 +43,11 @@ class SubMenu
         return $this->items()->isNotEmpty();
     }
 
+    public function backgroundImage()
+    {
+        return $this->subMenu->backgroundImage;
+    }
+
     public function items()
     {
         if (! is_null($this->subMenuItems)) {
