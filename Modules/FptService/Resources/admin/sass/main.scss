@@ -1,0 +1,37 @@
+@import '~jstree/dist/themes/default/style';
+
+.fpt-category-tree {
+    margin-left: -10px;
+}
+
+.add-root-fpt-category {
+    display: table;
+}
+
+.add-sub-fpt-category {
+    display: table;
+    margin: 5px 0 10px;
+}
+
+.rtl {
+    .jstree-default {
+        &.jstree-rtl .jstree-node {
+            background-position: 0% 1px;
+        }
+    }
+}
+
+#fpt-category-form .loading-spinner {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.fpt-category-details-tab {
+    margin: 0 -15px 0 15px;
+}
+
+@media screen and (max-width: 991px) {
+    .fpt-category-details-tab {
+        margin: 30px 0 0 -15px;
+    }
+}

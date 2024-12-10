@@ -45,5 +45,6 @@
     "Gallery": false,
     "Comment": false,
     "AutoLink": true,
-    "Rating": false
+    "Rating": false,
+    "FptService": true
 }

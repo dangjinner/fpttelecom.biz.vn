@@ -12,7 +12,7 @@ class SidebarExtender extends BaseSidebarExtender
     public function extend(Menu $menu)
     {
         $menu->group(trans('admin::sidebar.content'), function (Group $group) {
-            $group->item(trans('product::sidebar.products'), function (Item $item) {
+            $group->item(trans('post::sidebar.posts'), function (Item $item) {
                 $item->item(trans('tag::tags.tags'), function (Item $item) {
                     $item->icon('fa fa-tag');
                     $item->weight(27);

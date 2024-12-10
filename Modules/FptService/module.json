@@ -1,0 +1,13 @@
+{
+    "name": "FptService",
+    "alias": "fptservice",
+    "description": "The FleetCart FPT Module.",
+    
+    "priority": 0,
+    "providers": [
+        "Modules\\FptService\\Providers\\FPTServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
