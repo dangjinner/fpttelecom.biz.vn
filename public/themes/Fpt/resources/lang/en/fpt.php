@@ -74,6 +74,7 @@ return [
         'fpt_contact_messenger' => 'Contact Messenger',
         'fpt_contact_chat' => 'Contact Chat',
         'fpt_contact_phone' => 'Contact Phone',
+        'home_page_service_1' => 'Service 1'
     ],
     'tabs' => [
         'group' => [
@@ -104,6 +105,7 @@ return [
         'home_page' => [
             'banner' => 'Banner',
             'features' => 'Features',
+            'services' => 'Services'
         ],
     ],
 ];

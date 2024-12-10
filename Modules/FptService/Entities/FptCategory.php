@@ -115,4 +115,14 @@ class FptCategory extends Model
     {
         return $this->files->where('pivot.zone', 'banner')->first() ?: new File;
     }
+
+    public function fptServices()
+    {
+        return $this->belongsToMany(
+            FptService::class,
+            FptServiceCategory::class,
+            'fpt_category_id',
+            'fpt_service_id'
+        );
+    }
 }

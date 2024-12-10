@@ -36,128 +36,36 @@
             </div>
         </div>
     </div>
-    <div class="main_package">
-        <div class="package_title">
-            <h2>Gói đề xuất</h2>
-            <p>Bao gồm gói giá khuyến mãi - Đáp ứng mọi nhu cầu cuộc sống cá nhân, gia đình</p>
-        </div>
-        <div class="box_package silder_package">
-            <div class="package_item">
-                <div class="img"><img src="{{ v(Theme::url('assets/img/table-price/combointernetcameran.jpg')) }}" alt=""></div>
-                <div class="package_content">
-                    <div class="title">
-                        <h3>Combo Camera</h3>
-                    </div>
-                    <div class="price">
-                        <span class="icon-info">Chỉ từ <img src="{{ v(Theme::url('assets/img/icon/info-circle.svg')) }}" alt=""></span>
-                        <p>192.000đ <span>/ tháng</span></p>
-                    </div>
-                    <div class="list_item">
-                        <ul>
-                            <li>Trang bị Modem Wi-Fi 6</li>
-                            <li>Trang bị Camera IQ3S kèm gói lưu trữ Cloud 3 ngày</li>
-                            <li>Tặng 1 thiết bị Access Point</li>
-                            <li>Tiết kiệm tới 950.000đ so với mua lẻ</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="package_btn">
-                    <a href="#" class="btn_dk">Đăng ký ngay</a>
-                </div>
+    @if($service1)
+        <div class="main_package">
+            <div class="package_title">
+                <h2>{{ $service1['category']->name }}</h2>
+                <p>{!! $service1['category']->description !!} </p>
             </div>
-            <div class="package_item">
-                <div class="img"><img src="{{ v(Theme::url('assets/img/table-price/combointernetcameran.jpg')) }}" alt=""></div>
-                <div class="package_content">
-                    <div class="title">
-                        <h3>Internet GIGA</h3>
+            <div class="box_package silder_package">
+                @foreach($service1['services'] as $service)
+                    <div class="package_item">
+                        <div class="img"><img src="{{ $service->logo->path }}" alt=""></div>
+                        <div class="package_content">
+                            <div class="title">
+                                <h3>{{ $service->name }}</h3>
+                            </div>
+                            <div class="price">
+                                <span class="icon-info">Chỉ từ <img src="{{ v(Theme::url('assets/img/icon/info-circle.svg')) }}" alt=""></span>
+                                <p>{{ $service->price->format() }}<span>/ {{ $service->billing_cycle }}</span></p>
+                            </div>
+                            <div class="list_item">
+                              {!! $service->features !!}
+                            </div>
+                        </div>
+                        <div class="package_btn">
+                            <a href="#" class="btn_dk">Đăng ký ngay</a>
+                        </div>
                     </div>
-                    <div class="price">
-                        <span class="icon-info">Chỉ từ <img src="{{ v(Theme::url('assets/img/icon/info-circle.svg')) }}" alt=""></span>
-                        <p>185.000đ <span>/ tháng</span></p>
-                    </div>
-                    <div class="list_item">
-                        <ul>
-                            <li>Trang bị Modem Wi-Fi 6</li>
-                            <li>Tốc độ Download/Upload 150 Mbps</li>
-                            <li>Phù hợp cá nhân, hộ gia đình</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="package_btn">
-                    <a href="#" class="btn_dk">Đăng ký ngay</a>
-                </div>
-            </div>
-            <div class="package_item">
-                <div class="img"><img src="{{ v(Theme::url('assets/img/table-price/combointernetcameran.jpg')) }}" alt=""></div>
-                <div class="package_content">
-                    <div class="title">
-                        <h3>Combo Camera</h3>
-                    </div>
-                    <div class="price">
-                        <span class="icon-info">Chỉ từ <img src="{{ v(Theme::url('assets/img/icon/info-circle.svg')) }}" alt=""></span>
-                        <p>192.000đ <span>/ tháng</span></p>
-                    </div>
-                    <div class="list_item">
-                        <ul>
-                            <li>Trang bị Modem Wi-Fi 6</li>
-                            <li>Trang bị Camera IQ3S kèm gói lưu trữ Cloud 3 ngày</li>
-                            <li>Tặng 1 thiết bị Access Point</li>
-                            <li>Tiết kiệm tới 950.000đ so với mua lẻ</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="package_btn">
-                    <a href="#" class="btn_dk">Đăng ký ngay</a>
-                </div>
-            </div>
-            <div class="package_item">
-                <div class="img"><img src="{{ v(Theme::url('assets/img/table-price/combointernetcameran.jpg')) }}" alt=""></div>
-                <div class="package_content">
-                    <div class="title">
-                        <h3>Combo Camera</h3>
-                    </div>
-                    <div class="price">
-                        <span class="icon-info">Chỉ từ <img src="{{ v(Theme::url('assets/img/icon/info-circle.svg')) }}" alt=""></span>
-                        <p>192.000đ <span>/ tháng</span></p>
-                    </div>
-                    <div class="list_item">
-                        <ul>
-                            <li>Trang bị Modem Wi-Fi 6</li>
-                            <li>Trang bị Camera IQ3S kèm gói lưu trữ Cloud 3 ngày</li>
-                            <li>Tặng 1 thiết bị Access Point</li>
-                            <li>Tiết kiệm tới 950.000đ so với mua lẻ</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="package_btn">
-                    <a href="#" class="btn_dk">Đăng ký ngay</a>
-                </div>
-            </div>
-            <div class="package_item">
-                <div class="img"><img src="{{ v(Theme::url('assets/img/table-price/combointernetcameran.jpg')) }}" alt=""></div>
-                <div class="package_content">
-                    <div class="title">
-                        <h3>Combo Camera</h3>
-                    </div>
-                    <div class="price">
-                        <span class="icon-info">Chỉ từ <img src="{{ v(Theme::url('assets/img/icon/info-circle.svg')) }}" alt=""></span>
-                        <p>192.000đ <span>/ tháng</span></p>
-                    </div>
-                    <div class="list_item">
-                        <ul>
-                            <li>Trang bị Modem Wi-Fi 6</li>
-                            <li>Trang bị Camera IQ3S kèm gói lưu trữ Cloud 3 ngày</li>
-                            <li>Tặng 1 thiết bị Access Point</li>
-                            <li>Tiết kiệm tới 950.000đ so với mua lẻ</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="package_btn">
-                    <a href="#" class="btn_dk">Đăng ký ngay</a>
-                </div>
+                @endforeach
             </div>
         </div>
-    </div>
+    @endif
     <div class="main_internet">
         <div class="container">
             <div class="box_internet">

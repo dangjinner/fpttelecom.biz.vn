@@ -4,6 +4,8 @@ namespace Themes\Fpt\Http\ViewComposer;
 
 use Illuminate\Support\Facades\Cache;
 use Modules\Category\Entities\Category;
+use Modules\FptService\Entities\FptCategory;
+use Modules\FptService\Entities\FptService;
 use Modules\Media\Entities\File;
 use Modules\Menu\MegaMenu\MegaMenu;
 use Modules\Slider\Entities\Slider;
@@ -24,6 +26,7 @@ class HomePageViewComposer
             'features' => $this->getFeatures(),
             'promotionSlider' => Slider::findWithSlides(setting('home_page_promotion_slider')),
             'internetPackagesSlider' => Slider::findWithSlides(setting('home_page_internet_packages_slider')),
+            'service1' => $this->getService1()
         ]);
     }
 
@@ -47,5 +50,18 @@ class HomePageViewComposer
         }
 
         return $features;
+    }
+
+    private function getService1()
+    {
+        $fptCategory = FptCategory::find(setting('home_page_service_1'));
+        if ($fptCategory) {
+            return [
+                'category' => $fptCategory,
+                'services' => $fptCategory->fptServices,
+            ];
+        }
+
+        return null;
     }
 }

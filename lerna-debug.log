@@ -5,9 +5,9 @@
 1 silly flags   rejectCycles: false,
 1 silly flags   args: []
 1 silly flags }
-2 verbose rootPath C:\laragon\www\wmt
+2 verbose rootPath F:\laragon\www\fpt-internet
 3 info version 2.11.0
-4 silly existsSync C:\laragon\www\wmt\VERSION
+4 silly existsSync F:\laragon\www\fpt-internet\VERSION
 5 silly initialize attempt
 6 silly npmConfig {
 6 silly npmConfig   registry: undefined,
@@ -17,7 +17,7 @@
 6 silly npmConfig }
 7 silly initialize success
 8 silly execute attempt
-9 info Bootstrapping 8 packages
+9 info Bootstrapping 10 packages
 10 info lifecycle preinstall
 11 silly runScript preinstall admin-module
 12 silly admin-module
@@ -31,318 +31,408 @@
 20 silly media-module
 21 silly runScript preinstall menu-module
 22 silly menu-module
-23 silly runScript preinstall translation-module
-24 silly translation-module
-25 silly runScript preinstall user-module
-26 silly user-module
-27 silly hasDependencyInstalled admin-module bootstrap
-28 silly dependencyIsSatisfied [
-28 silly dependencyIsSatisfied   'bootstrap',
-28 silly dependencyIsSatisfied   '^3.3.7',
-28 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-28 silly dependencyIsSatisfied ]
-29 verbose dependencyIsSatisfied bootstrap true
-30 silly hasDependencyInstalled admin-module chart.js
-31 silly dependencyIsSatisfied [
-31 silly dependencyIsSatisfied   'chart.js',
-31 silly dependencyIsSatisfied   '^2.7.3',
-31 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-31 silly dependencyIsSatisfied ]
-32 verbose dependencyIsSatisfied chart.js true
-33 silly hasDependencyInstalled admin-module datatables.net
-34 silly dependencyIsSatisfied [
-34 silly dependencyIsSatisfied   'datatables.net',
-34 silly dependencyIsSatisfied   '^1.10.15',
-34 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-34 silly dependencyIsSatisfied ]
-35 verbose dependencyIsSatisfied datatables.net true
-36 silly hasDependencyInstalled admin-module datatables.net-bs
-37 silly dependencyIsSatisfied [
-37 silly dependencyIsSatisfied   'datatables.net-bs',
-37 silly dependencyIsSatisfied   '^1.10.15',
-37 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-37 silly dependencyIsSatisfied ]
-38 verbose dependencyIsSatisfied datatables.net-bs true
-39 silly hasDependencyInstalled media-module dropzone
-40 silly dependencyIsSatisfied [
-40 silly dependencyIsSatisfied   'dropzone',
-40 silly dependencyIsSatisfied   '^5.4.0',
-40 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Media\\node_modules'
-40 silly dependencyIsSatisfied ]
-41 verbose dependencyIsSatisfied dropzone false
-42 silly hasDependencyInstalled admin-module flatpickr
-43 silly dependencyIsSatisfied [
-43 silly dependencyIsSatisfied   'flatpickr',
-43 silly dependencyIsSatisfied   '^3.0.6',
-43 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-43 silly dependencyIsSatisfied ]
-44 verbose dependencyIsSatisfied flatpickr true
-45 silly hasDependencyInstalled admin-module jquery
-46 silly dependencyIsSatisfied [
-46 silly dependencyIsSatisfied   'jquery',
-46 silly dependencyIsSatisfied   '^3.2.1',
-46 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-46 silly dependencyIsSatisfied ]
-47 verbose dependencyIsSatisfied jquery true
-48 silly hasDependencyInstalled admin-module jquery-slimscroll
-49 silly dependencyIsSatisfied [
-49 silly dependencyIsSatisfied   'jquery-slimscroll',
-49 silly dependencyIsSatisfied   '^1.3.8',
-49 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-49 silly dependencyIsSatisfied ]
-50 verbose dependencyIsSatisfied jquery-slimscroll true
-51 silly hasDependencyInstalled admin-module mousetrap
-52 silly dependencyIsSatisfied [
-52 silly dependencyIsSatisfied   'mousetrap',
-52 silly dependencyIsSatisfied   '^1.6.1',
-52 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-52 silly dependencyIsSatisfied ]
-53 verbose dependencyIsSatisfied mousetrap true
-54 silly hasDependencyInstalled menu-module nestable2
-55 silly dependencyIsSatisfied [
-55 silly dependencyIsSatisfied   'nestable2',
-55 silly dependencyIsSatisfied   '^1.6.0',
-55 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Menu\\node_modules'
-55 silly dependencyIsSatisfied ]
-56 verbose dependencyIsSatisfied nestable2 false
-57 silly hasDependencyInstalled admin-module nprogress
-58 silly dependencyIsSatisfied [
-58 silly dependencyIsSatisfied   'nprogress',
-58 silly dependencyIsSatisfied   '^0.2.0',
-58 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-58 silly dependencyIsSatisfied ]
-59 verbose dependencyIsSatisfied nprogress true
-60 silly hasDependencyInstalled admin-module selectize
-61 silly dependencyIsSatisfied [
-61 silly dependencyIsSatisfied   'selectize',
-61 silly dependencyIsSatisfied   '^0.12.6',
-61 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-61 silly dependencyIsSatisfied ]
-62 verbose dependencyIsSatisfied selectize true
-63 silly hasDependencyInstalled admin-module sortablejs
-64 silly dependencyIsSatisfied [
-64 silly dependencyIsSatisfied   'sortablejs',
-64 silly dependencyIsSatisfied   'https://github.com/RubaXa/Sortable',
-64 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-64 silly dependencyIsSatisfied ]
-65 verbose dependencyIsSatisfied sortablejs false
-66 silly hasDependencyInstalled admin-module tinymce
-67 silly dependencyIsSatisfied [
-67 silly dependencyIsSatisfied   'tinymce',
-67 silly dependencyIsSatisfied   '^5.2.2',
-67 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-67 silly dependencyIsSatisfied ]
-68 verbose dependencyIsSatisfied tinymce true
-69 silly hasDependencyInstalled admin-module font-awesome
-70 silly dependencyIsSatisfied [
-70 silly dependencyIsSatisfied   'font-awesome',
-70 silly dependencyIsSatisfied   '^4.7.0',
-70 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-70 silly dependencyIsSatisfied ]
-71 verbose dependencyIsSatisfied font-awesome true
-72 silly hasDependencyInstalled admin-module lodash
-73 silly dependencyIsSatisfied [
-73 silly dependencyIsSatisfied   'lodash',
-73 silly dependencyIsSatisfied   '^4.17.4',
-73 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Admin\\node_modules'
-73 silly dependencyIsSatisfied ]
-74 verbose dependencyIsSatisfied lodash true
-75 silly hasDependencyInstalled category-module jstree
-76 silly dependencyIsSatisfied [
-76 silly dependencyIsSatisfied   'jstree',
-76 silly dependencyIsSatisfied   '^3.3.9',
-76 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Category\\node_modules'
-76 silly dependencyIsSatisfied ]
-77 verbose dependencyIsSatisfied jstree true
-78 silly hasDependencyInstalled category-module jstree
-79 silly dependencyIsSatisfied [
-79 silly dependencyIsSatisfied   'jstree',
-79 silly dependencyIsSatisfied   '^3.3.9',
-79 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Category\\node_modules'
-79 silly dependencyIsSatisfied ]
-80 verbose dependencyIsSatisfied jstree true
-81 silly hasDependencyInstalled group-module jstree
-82 silly dependencyIsSatisfied [
-82 silly dependencyIsSatisfied   'jstree',
-82 silly dependencyIsSatisfied   '^3.3.9',
-82 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Group\\node_modules'
-82 silly dependencyIsSatisfied ]
-83 verbose dependencyIsSatisfied jstree true
-84 silly hasDependencyInstalled translation-module x-editable
-85 silly dependencyIsSatisfied [
-85 silly dependencyIsSatisfied   'x-editable',
-85 silly dependencyIsSatisfied   '^1.5.1',
-85 silly dependencyIsSatisfied   'C:\\laragon\\www\\wmt\\Modules\\Translation\\node_modules'
-85 silly dependencyIsSatisfied ]
-86 verbose dependencyIsSatisfied x-editable true
-87 silly root dependencies []
-88 silly leaf dependencies {
-88 silly leaf dependencies   "admin-module": [
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "bootstrap@^3.3.7",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "chart.js@^2.7.3",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "datatables.net@^1.10.15",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "datatables.net-bs@^1.10.15",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "flatpickr@^3.0.6",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "jquery@^3.2.1",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "jquery-slimscroll@^1.3.8",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "mousetrap@^1.6.1",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "nprogress@^0.2.0",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "selectize@^0.12.6",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "sortablejs@https://github.com/RubaXa/Sortable",
-88 silly leaf dependencies       "isSatisfied": false
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "tinymce@^5.2.2",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "font-awesome@^4.7.0",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "lodash@^4.17.4",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     }
-88 silly leaf dependencies   ],
-88 silly leaf dependencies   "media-module": [
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "dropzone@^5.4.0",
-88 silly leaf dependencies       "isSatisfied": false
-88 silly leaf dependencies     }
-88 silly leaf dependencies   ],
-88 silly leaf dependencies   "menu-module": [
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "nestable2@^1.6.0",
-88 silly leaf dependencies       "isSatisfied": false
-88 silly leaf dependencies     }
-88 silly leaf dependencies   ],
-88 silly leaf dependencies   "category-module": [
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "jstree@^3.3.9",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     },
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "jstree@^3.3.9",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     }
-88 silly leaf dependencies   ],
-88 silly leaf dependencies   "group-module": [
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "jstree@^3.3.9",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     }
-88 silly leaf dependencies   ],
-88 silly leaf dependencies   "translation-module": [
-88 silly leaf dependencies     {
-88 silly leaf dependencies       "dependency": "x-editable@^1.5.1",
-88 silly leaf dependencies       "isSatisfied": true
-88 silly leaf dependencies     }
-88 silly leaf dependencies   ]
-88 silly leaf dependencies }
-89 info Installing external dependencies
-90 verbose actions 3 actions, concurrency 4
-91 silly installInDir Admin [
-91 silly installInDir   'bootstrap@^3.3.7',
-91 silly installInDir   'chart.js@^2.7.3',
-91 silly installInDir   'datatables.net@^1.10.15',
-91 silly installInDir   'datatables.net-bs@^1.10.15',
-91 silly installInDir   'flatpickr@^3.0.6',
-91 silly installInDir   'jquery@^3.2.1',
-91 silly installInDir   'jquery-slimscroll@^1.3.8',
-91 silly installInDir   'mousetrap@^1.6.1',
-91 silly installInDir   'nprogress@^0.2.0',
-91 silly installInDir   'selectize@^0.12.6',
-91 silly installInDir   'sortablejs@https://github.com/RubaXa/Sortable',
-91 silly installInDir   'tinymce@^5.2.2',
-91 silly installInDir   'font-awesome@^4.7.0',
-91 silly installInDir   'lodash@^4.17.4'
-91 silly installInDir ]
-92 silly installInDir backup C:\laragon\www\wmt\Modules\Admin\package.json
-93 silly rename [
-93 silly rename   'C:\\laragon\\www\\wmt\\Modules\\Admin\\package.json',
-93 silly rename   'C:\\laragon\\www\\wmt\\Modules\\Admin\\package.json.lerna_backup'
-93 silly rename ]
-94 silly installInDir Media [ 'dropzone@^5.4.0' ]
-95 silly installInDir backup C:\laragon\www\wmt\Modules\Media\package.json
-96 silly rename [
-96 silly rename   'C:\\laragon\\www\\wmt\\Modules\\Media\\package.json',
-96 silly rename   'C:\\laragon\\www\\wmt\\Modules\\Media\\package.json.lerna_backup'
-96 silly rename ]
-97 silly installInDir Menu [ 'nestable2@^1.6.0' ]
-98 silly installInDir backup C:\laragon\www\wmt\Modules\Menu\package.json
-99 silly rename [
-99 silly rename   'C:\\laragon\\www\\wmt\\Modules\\Menu\\package.json',
-99 silly rename   'C:\\laragon\\www\\wmt\\Modules\\Menu\\package.json.lerna_backup'
-99 silly rename ]
-100 silly installInDir writing tempJson {
-100 silly installInDir   dependencies: {
-100 silly installInDir     bootstrap: '^3.3.7',
-100 silly installInDir     'chart.js': '^2.7.3',
-100 silly installInDir     'datatables.net': '^1.10.15',
-100 silly installInDir     'datatables.net-bs': '^1.10.15',
-100 silly installInDir     flatpickr: '^3.0.6',
-100 silly installInDir     jquery: '^3.2.1',
-100 silly installInDir     'jquery-slimscroll': '^1.3.8',
-100 silly installInDir     mousetrap: '^1.6.1',
-100 silly installInDir     nprogress: '^0.2.0',
-100 silly installInDir     selectize: '^0.12.6',
-100 silly installInDir     sortablejs: 'https://github.com/RubaXa/Sortable',
-100 silly installInDir     tinymce: '^5.2.2',
-100 silly installInDir     'font-awesome': '^4.7.0',
-100 silly installInDir     lodash: '^4.17.4'
-100 silly installInDir   }
-100 silly installInDir }
-101 silly installInDir writing tempJson { dependencies: { dropzone: '^5.4.0' } }
-102 silly installInDir writing tempJson { dependencies: { nestable2: '^1.6.0' } }
-103 silly getExecOpts { cwd: 'C:\\laragon\\www\\wmt\\Modules\\Media' }
-104 silly installInDir [
-104 silly installInDir   'yarn',
-104 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ]
-104 silly installInDir ]
-105 silly getExecOpts { cwd: 'C:\\laragon\\www\\wmt\\Modules\\Menu' }
-106 silly installInDir [
-106 silly installInDir   'yarn',
-106 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ]
-106 silly installInDir ]
-107 silly installInDir cleanup C:\laragon\www\wmt\Modules\Media\package.json
-108 silly renameSync [
-108 silly renameSync   'C:\\laragon\\www\\wmt\\Modules\\Media\\package.json.lerna_backup',
-108 silly renameSync   'C:\\laragon\\www\\wmt\\Modules\\Media\\package.json'
-108 silly renameSync ]
-109 verbose installed leaf media-module
-110 error execute callback with error
-111 error Error: spawn yarn ENOENT
-111 error     at notFoundError (C:\laragon\www\wmt\node_modules\lerna\node_modules\cross-spawn\lib\enoent.js:11:11)
-111 error     at verifyENOENT (C:\laragon\www\wmt\node_modules\lerna\node_modules\cross-spawn\lib\enoent.js:46:16)
-111 error     at ChildProcess.cp.emit (C:\laragon\www\wmt\node_modules\lerna\node_modules\cross-spawn\lib\enoent.js:33:19)
+23 silly runScript preinstall page-module
+24 silly page-module
+25 silly runScript preinstall undefined
+26 silly
+27 silly runScript preinstall translation-module
+28 silly translation-module
+29 silly runScript preinstall user-module
+30 silly user-module
+31 silly hasDependencyInstalled undefined cross-env
+32 silly dependencyIsSatisfied [
+32 silly dependencyIsSatisfied   'cross-env',
+32 silly dependencyIsSatisfied   '^7.0',
+32 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Rating\\node_modules'
+32 silly dependencyIsSatisfied ]
+33 verbose dependencyIsSatisfied cross-env false
+34 silly hasDependencyInstalled undefined laravel-mix
+35 silly dependencyIsSatisfied [
+35 silly dependencyIsSatisfied   'laravel-mix',
+35 silly dependencyIsSatisfied   '^5.0.1',
+35 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Rating\\node_modules'
+35 silly dependencyIsSatisfied ]
+36 verbose dependencyIsSatisfied laravel-mix false
+37 silly hasDependencyInstalled undefined laravel-mix-merge-manifest
+38 silly dependencyIsSatisfied [
+38 silly dependencyIsSatisfied   'laravel-mix-merge-manifest',
+38 silly dependencyIsSatisfied   '^0.1.2',
+38 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Rating\\node_modules'
+38 silly dependencyIsSatisfied ]
+39 verbose dependencyIsSatisfied laravel-mix-merge-manifest false
+40 silly hasDependencyInstalled page-module webpack
+41 silly dependencyIsSatisfied [
+41 silly dependencyIsSatisfied   'webpack',
+41 silly dependencyIsSatisfied   '^5.38.1',
+41 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Page\\node_modules'
+41 silly dependencyIsSatisfied ]
+42 verbose dependencyIsSatisfied webpack false
+43 silly hasDependencyInstalled admin-module bootstrap
+44 silly dependencyIsSatisfied [
+44 silly dependencyIsSatisfied   'bootstrap',
+44 silly dependencyIsSatisfied   '^3.3.7',
+44 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+44 silly dependencyIsSatisfied ]
+45 verbose dependencyIsSatisfied bootstrap false
+46 silly hasDependencyInstalled admin-module chart.js
+47 silly dependencyIsSatisfied [
+47 silly dependencyIsSatisfied   'chart.js',
+47 silly dependencyIsSatisfied   '^2.7.3',
+47 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+47 silly dependencyIsSatisfied ]
+48 verbose dependencyIsSatisfied chart.js false
+49 silly hasDependencyInstalled admin-module datatables.net
+50 silly dependencyIsSatisfied [
+50 silly dependencyIsSatisfied   'datatables.net',
+50 silly dependencyIsSatisfied   '^1.10.15',
+50 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+50 silly dependencyIsSatisfied ]
+51 verbose dependencyIsSatisfied datatables.net false
+52 silly hasDependencyInstalled admin-module datatables.net-bs
+53 silly dependencyIsSatisfied [
+53 silly dependencyIsSatisfied   'datatables.net-bs',
+53 silly dependencyIsSatisfied   '^1.10.15',
+53 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+53 silly dependencyIsSatisfied ]
+54 verbose dependencyIsSatisfied datatables.net-bs false
+55 silly hasDependencyInstalled admin-module flatpickr
+56 silly dependencyIsSatisfied [
+56 silly dependencyIsSatisfied   'flatpickr',
+56 silly dependencyIsSatisfied   '^3.0.6',
+56 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+56 silly dependencyIsSatisfied ]
+57 verbose dependencyIsSatisfied flatpickr false
+58 silly hasDependencyInstalled admin-module font-awesome
+59 silly dependencyIsSatisfied [
+59 silly dependencyIsSatisfied   'font-awesome',
+59 silly dependencyIsSatisfied   '^4.7.0',
+59 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+59 silly dependencyIsSatisfied ]
+60 verbose dependencyIsSatisfied font-awesome false
+61 silly hasDependencyInstalled admin-module jquery
+62 silly dependencyIsSatisfied [
+62 silly dependencyIsSatisfied   'jquery',
+62 silly dependencyIsSatisfied   '^3.2.1',
+62 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+62 silly dependencyIsSatisfied ]
+63 verbose dependencyIsSatisfied jquery false
+64 silly hasDependencyInstalled admin-module jquery-slimscroll
+65 silly dependencyIsSatisfied [
+65 silly dependencyIsSatisfied   'jquery-slimscroll',
+65 silly dependencyIsSatisfied   '^1.3.8',
+65 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+65 silly dependencyIsSatisfied ]
+66 verbose dependencyIsSatisfied jquery-slimscroll false
+67 silly hasDependencyInstalled admin-module lodash
+68 silly dependencyIsSatisfied [
+68 silly dependencyIsSatisfied   'lodash',
+68 silly dependencyIsSatisfied   '^4.17.4',
+68 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+68 silly dependencyIsSatisfied ]
+69 verbose dependencyIsSatisfied lodash false
+70 silly hasDependencyInstalled admin-module mousetrap
+71 silly dependencyIsSatisfied [
+71 silly dependencyIsSatisfied   'mousetrap',
+71 silly dependencyIsSatisfied   '^1.6.1',
+71 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+71 silly dependencyIsSatisfied ]
+72 verbose dependencyIsSatisfied mousetrap false
+73 silly hasDependencyInstalled admin-module nprogress
+74 silly dependencyIsSatisfied [
+74 silly dependencyIsSatisfied   'nprogress',
+74 silly dependencyIsSatisfied   '^0.2.0',
+74 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+74 silly dependencyIsSatisfied ]
+75 verbose dependencyIsSatisfied nprogress false
+76 silly hasDependencyInstalled admin-module selectize
+77 silly dependencyIsSatisfied [
+77 silly dependencyIsSatisfied   'selectize',
+77 silly dependencyIsSatisfied   '^0.12.6',
+77 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+77 silly dependencyIsSatisfied ]
+78 verbose dependencyIsSatisfied selectize false
+79 silly hasDependencyInstalled admin-module sortablejs
+80 silly dependencyIsSatisfied [
+80 silly dependencyIsSatisfied   'sortablejs',
+80 silly dependencyIsSatisfied   'https://github.com/RubaXa/Sortable',
+80 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+80 silly dependencyIsSatisfied ]
+81 verbose dependencyIsSatisfied sortablejs false
+82 silly hasDependencyInstalled admin-module tinymce
+83 silly dependencyIsSatisfied [
+83 silly dependencyIsSatisfied   'tinymce',
+83 silly dependencyIsSatisfied   '^5.2.2',
+83 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\node_modules'
+83 silly dependencyIsSatisfied ]
+84 verbose dependencyIsSatisfied tinymce false
+85 silly hasDependencyInstalled category-module jstree
+86 silly dependencyIsSatisfied [
+86 silly dependencyIsSatisfied   'jstree',
+86 silly dependencyIsSatisfied   '^3.3.9',
+86 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Category\\node_modules'
+86 silly dependencyIsSatisfied ]
+87 verbose dependencyIsSatisfied jstree false
+88 silly hasDependencyInstalled category-module jstree
+89 silly dependencyIsSatisfied [
+89 silly dependencyIsSatisfied   'jstree',
+89 silly dependencyIsSatisfied   '^3.3.9',
+89 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Category\\node_modules'
+89 silly dependencyIsSatisfied ]
+90 verbose dependencyIsSatisfied jstree false
+91 silly hasDependencyInstalled group-module jstree
+92 silly dependencyIsSatisfied [
+92 silly dependencyIsSatisfied   'jstree',
+92 silly dependencyIsSatisfied   '^3.3.9',
+92 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Group\\node_modules'
+92 silly dependencyIsSatisfied ]
+93 verbose dependencyIsSatisfied jstree false
+94 silly hasDependencyInstalled media-module dropzone
+95 silly dependencyIsSatisfied [
+95 silly dependencyIsSatisfied   'dropzone',
+95 silly dependencyIsSatisfied   '^5.4.0',
+95 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Media\\node_modules'
+95 silly dependencyIsSatisfied ]
+96 verbose dependencyIsSatisfied dropzone false
+97 silly hasDependencyInstalled menu-module nestable2
+98 silly dependencyIsSatisfied [
+98 silly dependencyIsSatisfied   'nestable2',
+98 silly dependencyIsSatisfied   '^1.6.0',
+98 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Menu\\node_modules'
+98 silly dependencyIsSatisfied ]
+99 verbose dependencyIsSatisfied nestable2 false
+100 silly hasDependencyInstalled page-module grapesjs
+101 silly dependencyIsSatisfied [
+101 silly dependencyIsSatisfied   'grapesjs',
+101 silly dependencyIsSatisfied   '^0.17.4',
+101 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Page\\node_modules'
+101 silly dependencyIsSatisfied ]
+102 verbose dependencyIsSatisfied grapesjs false
+103 silly hasDependencyInstalled translation-module x-editable
+104 silly dependencyIsSatisfied [
+104 silly dependencyIsSatisfied   'x-editable',
+104 silly dependencyIsSatisfied   '^1.5.1',
+104 silly dependencyIsSatisfied   'F:\\laragon\\www\\fpt-internet\\Modules\\Translation\\node_modules'
+104 silly dependencyIsSatisfied ]
+105 verbose dependencyIsSatisfied x-editable false
+106 silly root dependencies []
+107 silly leaf dependencies {
+107 silly leaf dependencies   "undefined": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "cross-env@^7.0",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "laravel-mix@^5.0.1",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "laravel-mix-merge-manifest@^0.1.2",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ],
+107 silly leaf dependencies   "page-module": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "webpack@^5.38.1",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "grapesjs@^0.17.4",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ],
+107 silly leaf dependencies   "admin-module": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "bootstrap@^3.3.7",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "chart.js@^2.7.3",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "datatables.net@^1.10.15",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "datatables.net-bs@^1.10.15",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "flatpickr@^3.0.6",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "font-awesome@^4.7.0",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "jquery@^3.2.1",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "jquery-slimscroll@^1.3.8",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "lodash@^4.17.4",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "mousetrap@^1.6.1",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "nprogress@^0.2.0",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "selectize@^0.12.6",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "sortablejs@https://github.com/RubaXa/Sortable",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "tinymce@^5.2.2",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ],
+107 silly leaf dependencies   "category-module": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "jstree@^3.3.9",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     },
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "jstree@^3.3.9",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ],
+107 silly leaf dependencies   "group-module": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "jstree@^3.3.9",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ],
+107 silly leaf dependencies   "media-module": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "dropzone@^5.4.0",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ],
+107 silly leaf dependencies   "menu-module": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "nestable2@^1.6.0",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ],
+107 silly leaf dependencies   "translation-module": [
+107 silly leaf dependencies     {
+107 silly leaf dependencies       "dependency": "x-editable@^1.5.1",
+107 silly leaf dependencies       "isSatisfied": false
+107 silly leaf dependencies     }
+107 silly leaf dependencies   ]
+107 silly leaf dependencies }
+108 info Installing external dependencies
+109 verbose actions 8 actions, concurrency 4
+110 silly installInDir Rating [
+110 silly installInDir   'cross-env@^7.0',
+110 silly installInDir   'laravel-mix@^5.0.1',
+110 silly installInDir   'laravel-mix-merge-manifest@^0.1.2'
+110 silly installInDir ]
+111 silly installInDir backup F:\laragon\www\fpt-internet\Modules\Rating\package.json
+112 silly rename [
+112 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\Rating\\package.json',
+112 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\Rating\\package.json.lerna_backup'
+112 silly rename ]
+113 silly installInDir Page [ 'webpack@^5.38.1', 'grapesjs@^0.17.4' ]
+114 silly installInDir backup F:\laragon\www\fpt-internet\Modules\Page\package.json
+115 silly rename [
+115 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\Page\\package.json',
+115 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\Page\\package.json.lerna_backup'
+115 silly rename ]
+116 silly installInDir Admin [
+116 silly installInDir   'bootstrap@^3.3.7',
+116 silly installInDir   'chart.js@^2.7.3',
+116 silly installInDir   'datatables.net@^1.10.15',
+116 silly installInDir   'datatables.net-bs@^1.10.15',
+116 silly installInDir   'flatpickr@^3.0.6',
+116 silly installInDir   'font-awesome@^4.7.0',
+116 silly installInDir   'jquery@^3.2.1',
+116 silly installInDir   'jquery-slimscroll@^1.3.8',
+116 silly installInDir   'lodash@^4.17.4',
+116 silly installInDir   'mousetrap@^1.6.1',
+116 silly installInDir   'nprogress@^0.2.0',
+116 silly installInDir   'selectize@^0.12.6',
+116 silly installInDir   'sortablejs@https://github.com/RubaXa/Sortable',
+116 silly installInDir   'tinymce@^5.2.2'
+116 silly installInDir ]
+117 silly installInDir backup F:\laragon\www\fpt-internet\Modules\Admin\package.json
+118 silly rename [
+118 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\package.json',
+118 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\package.json.lerna_backup'
+118 silly rename ]
+119 silly installInDir CategoryService [ 'jstree@^3.3.9', 'jstree@^3.3.9' ]
+120 silly installInDir backup F:\laragon\www\fpt-internet\Modules\CategoryService\package.json
+121 silly rename [
+121 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\CategoryService\\package.json',
+121 silly rename   'F:\\laragon\\www\\fpt-internet\\Modules\\CategoryService\\package.json.lerna_backup'
+121 silly rename ]
+122 silly installInDir writing tempJson {
+122 silly installInDir   dependencies: {
+122 silly installInDir     'cross-env': '^7.0',
+122 silly installInDir     'laravel-mix': '^5.0.1',
+122 silly installInDir     'laravel-mix-merge-manifest': '^0.1.2'
+122 silly installInDir   }
+122 silly installInDir }
+123 silly installInDir writing tempJson { dependencies: { webpack: '^5.38.1', grapesjs: '^0.17.4' } }
+124 silly installInDir writing tempJson {
+124 silly installInDir   dependencies: {
+124 silly installInDir     bootstrap: '^3.3.7',
+124 silly installInDir     'chart.js': '^2.7.3',
+124 silly installInDir     'datatables.net': '^1.10.15',
+124 silly installInDir     'datatables.net-bs': '^1.10.15',
+124 silly installInDir     flatpickr: '^3.0.6',
+124 silly installInDir     'font-awesome': '^4.7.0',
+124 silly installInDir     jquery: '^3.2.1',
+124 silly installInDir     'jquery-slimscroll': '^1.3.8',
+124 silly installInDir     lodash: '^4.17.4',
+124 silly installInDir     mousetrap: '^1.6.1',
+124 silly installInDir     nprogress: '^0.2.0',
+124 silly installInDir     selectize: '^0.12.6',
+124 silly installInDir     sortablejs: 'https://github.com/RubaXa/Sortable',
+124 silly installInDir     tinymce: '^5.2.2'
+124 silly installInDir   }
+124 silly installInDir }
+125 silly installInDir writing tempJson { dependencies: { jstree: '^3.3.9' } }
+126 silly getExecOpts { cwd: 'F:\\laragon\\www\\fpt-internet\\Modules\\Admin' }
+127 silly installInDir [
+127 silly installInDir   'yarn',
+127 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ]
+127 silly installInDir ]
+128 silly getExecOpts { cwd: 'F:\\laragon\\www\\fpt-internet\\Modules\\Rating' }
+129 silly installInDir [
+129 silly installInDir   'yarn',
+129 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ]
+129 silly installInDir ]
+130 silly getExecOpts { cwd: 'F:\\laragon\\www\\fpt-internet\\Modules\\CategoryService' }
+131 silly installInDir [
+131 silly installInDir   'yarn',
+131 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ]
+131 silly installInDir ]
+132 silly getExecOpts { cwd: 'F:\\laragon\\www\\fpt-internet\\Modules\\Page' }
+133 silly installInDir [
+133 silly installInDir   'yarn',
+133 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ]
+133 silly installInDir ]
+134 silly installInDir cleanup F:\laragon\www\fpt-internet\Modules\Admin\package.json
+135 silly renameSync [
+135 silly renameSync   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\package.json.lerna_backup',
+135 silly renameSync   'F:\\laragon\\www\\fpt-internet\\Modules\\Admin\\package.json'
+135 silly renameSync ]
+136 verbose installed leaf admin-module
+137 error execute callback with error
+138 error Error: spawn yarn ENOENT
+138 error     at notFoundError (F:\laragon\www\fpt-internet\node_modules\lerna\node_modules\cross-spawn\lib\enoent.js:11:11)
+138 error     at verifyENOENT (F:\laragon\www\fpt-internet\node_modules\lerna\node_modules\cross-spawn\lib\enoent.js:46:16)
+138 error     at cp.emit (F:\laragon\www\fpt-internet\node_modules\lerna\node_modules\cross-spawn\lib\enoent.js:33:19)

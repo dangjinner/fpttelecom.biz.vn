@@ -4,6 +4,7 @@ namespace Themes\Fpt\Admin;
 
 use Modules\Admin\Ui\Tabs;
 use Modules\Admin\Ui\Tab;
+use Modules\FptService\Entities\FptCategory;
 use Modules\Tag\Entities\Tag;
 use Themes\Fpt\Banner;
 use Modules\Menu\Entities\Menu;
@@ -32,7 +33,8 @@ class FptTabs extends Tabs
 
         $this->group('home_page_settings', trans('fpt::fpt.tabs.group.home_page_settings'))
             ->add($this->getHomePageBanner())
-            ->add($this->getHomePageFeatures());
+            ->add($this->getHomePageFeatures())
+            ->add($this->getHomePageServices());
 
     }
 
@@ -166,6 +168,16 @@ class FptTabs extends Tabs
             $tab->weight(2);
             $tab->view('admin.fpt.tabs.home.features', [
                 'featureLogos' => $featureLogos
+            ]);
+        });
+    }
+
+    public function getHomePageServices()
+    {
+        return tap(new Tab('home_page_services', trans('fpt::fpt.tabs.home_page.services')), function (Tab $tab) {
+            $tab->weight(3);
+            $tab->view('admin.fpt.tabs.home.services', [
+                'fptCategories' => FptCategory::treeList()
             ]);
         });
     }
