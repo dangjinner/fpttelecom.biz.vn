@@ -6,14 +6,24 @@
     padding-top: 70px;
 }
 
-.list_news .news_item .img {
+.list_news .news_item .img  {
     height: 200px;
     position: relative;
 }
 
-.list_news .news_item .img img {
+.list_news .news_item .img img, .box_list-news .news_item .new_img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: center;
+    position: absolute;
+}
+
+.box_list-news .news_item .new_img {
+    height: 220px;
+    position: relative;
+}
+.box_list-news .wrap_news-text .title  {
+    margin-bottom: 0;
+    margin-top: 10px;
 }

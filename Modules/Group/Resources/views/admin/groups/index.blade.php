@@ -26,14 +26,18 @@
             <div class="col-lg-10 col-md-9">
                 <div class="tab-wrapper group-details-tab">
                     <ul class="nav nav-tabs">
-                        <li class="general-information-tab active"><a data-toggle="tab" href="#general-information">{{ trans('group::groups.tabs.general') }}</a></li>
-                        {{-- @hasAccess('admin.media.index')
+                        <li class="general-information-tab active"><a data-toggle="tab"
+                                                                      href="#general-information">{{ trans('group::groups.tabs.general') }}</a>
+                        </li>
+                        @hasAccess('admin.media.index')
                         <li class="image-tab"><a data-toggle="tab" href="#image">{{ trans('group::groups.tabs.image') }}</a></li>
-                        @endHasAccess --}}
-                        <li class="seo-tab hide"><a data-toggle="tab" href="#seo">{{ trans('group::groups.tabs.seo') }}</a></li>
+                        @endHasAccess
+                        <li class="seo-tab hide"><a data-toggle="tab"
+                                                    href="#seo">{{ trans('group::groups.tabs.seo') }}</a></li>
                     </ul>
 
-                    <form method="POST" action="{{ route('admin.groups.store') }}" class="form-horizontal" id="group-form" novalidate>
+                    <form method="POST" action="{{ route('admin.groups.store') }}" class="form-horizontal"
+                          id="group-form" novalidate>
                         {{ csrf_field() }}
 
                         <div class="tab-content">
@@ -51,25 +55,15 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- @if (auth()->user()->hasAccess('admin.media.index'))
-                                <div id="image" class="tab-pane fade">
-                                    <div class="logo">
-                                        @include('media::admin.image_picker.single', [
-                                        'title' => trans('category::categories.form.logo'),
-                                        'inputName' => 'files[logo]',
-                                        'file' => (object) ['exists' => false],
-                                        ])
-                                    </div>
-
-                                    <div class="banner">
-                                        @include('media::admin.image_picker.single', [
-                                        'title' => trans('category::categories.form.banner'),
-                                        'inputName' => 'files[banner]',
-                                        'file' => (object) ['exists' => false],
-                                        ])
-                                    </div>
+                            <div id="image" class="tab-pane fade">
+                                <div class="logo">
+                                    @include('media::admin.image_picker.single', [
+                                    'title' => trans('group::groups.form.logo'),
+                                    'inputName' => 'files[logo]',
+                                    'file' => (object) ['exists' => false],
+                                    ])
                                 </div>
-                            @endif --}}
+                            </div>
                             <div id="seo" class="tab-pane fade">
                                 <div class="row">
                                     <div class="col-md-8">
@@ -86,7 +80,8 @@
                                         {{ trans('admin::admin.buttons.save') }}
                                     </button>
 
-                                    <button type="button" class="btn btn-link text-red btn-delete p-l-0 hide" data-confirm>
+                                    <button type="button" class="btn btn-link text-red btn-delete p-l-0 hide"
+                                            data-confirm>
                                         {{ trans('admin::admin.buttons.delete') }}
                                     </button>
                                 </div>

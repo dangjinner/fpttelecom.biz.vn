@@ -90,6 +90,11 @@ class Post extends Model
         return $this->created_at->format('M d,Y');
     }
 
+    public function getDateTimeAttribute()
+    {
+        return $this->created_at->format('d-m-Y H:i');
+    }
+
     public function table()
     {
         return new PostTable($this->newQuery()->withoutGlobalScope('active')->withoutGlobalScope('created_at'));
@@ -123,9 +128,9 @@ class Post extends Model
 
     public function url()
     {
-        if( \Route::has('product.category') )
+        if( \Route::has('fpt.services.category') )
         {
-            return route('product.category', ['slug' => $this->slug]);
+            return route('fpt.services.category', ['slug' => $this->slug]);
         }
         return '';
     }

@@ -53,7 +53,8 @@ class FptCategory extends Model
     protected $slugAttribute = 'name';
 
     protected $appends = [
-        'banner'
+        'banner',
+        'logo'
     ];
 
     /**
@@ -114,6 +115,16 @@ class FptCategory extends Model
     public function getBannerAttribute()
     {
         return $this->files->where('pivot.zone', 'banner')->first() ?: new File;
+    }
+
+    /**
+     * Get the fpt service's logo.
+     *
+     * @return \Modules\Media\Entities\File
+     */
+    public function getLogoAttribute()
+    {
+        return $this->files->where('pivot.zone', 'logo')->first() ?: new File;
     }
 
     public function fptServices()

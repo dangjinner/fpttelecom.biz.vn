@@ -2,6 +2,8 @@
 
 namespace Modules\Group\Entities;
 
+use Modules\Media\Eloquent\HasMedia;
+use Modules\Media\Entities\File;
 use TypiCMS\NestableTrait;
 use Modules\Support\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
@@ -9,9 +11,10 @@ use Modules\Support\Eloquent\Sluggable;
 use Modules\Support\Eloquent\Translatable;
 use Modules\Post\Entities\Post;
 
-class Group extends Model {
+class Group extends Model
+{
 
-    use Translatable, Sluggable, NestableTrait;
+    use Translatable, Sluggable, NestableTrait, HasMedia;
 
     /**
      * The relations to eager load on every query.
@@ -58,6 +61,10 @@ class Group extends Model {
      */
     protected $slugAttribute = 'name';
 
+    protected $appends = [
+        'logo'
+    ];
+
     /**
      * Perform any actions required after the model boots.
      *
@@ -91,10 +98,10 @@ class Group extends Model {
 
     public function url()
     {
-        if( \Route::has('post.category') )
-        {
-            return route('post.category', ['slug' => $this->slug]);
+        if (\Route::has('fpt.news.category')) {
+            return route('fpt.news.category', ['slug' => $this->slug]);
         }
+
         return '';
     }
 
@@ -121,6 +128,27 @@ class Group extends Model {
             ->nest()
             ->setIndent('¦–– ')
             ->listsFlattened('name');
+    }
+
+    public function scopeSearchable($query)
+    {
+        return $query->where('is_searchable', true);
+    }
+
+    public function scopeIsParent($query)
+    {
+        return $query->where('parent_id', 0)
+            ->orWhereNull('parent_id');
+    }
+
+    /**
+     * Get the fpt group's logo.
+     *
+     * @return \Modules\Media\Entities\File
+     */
+    public function getLogoAttribute()
+    {
+        return $this->files->where('pivot.zone', 'logo')->first() ?: new File;
     }
 
     // public static function searchable()

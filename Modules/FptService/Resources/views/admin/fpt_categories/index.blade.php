@@ -58,6 +58,13 @@
                                 </div>
                             </div>
                             <div id="image" class="tab-pane fade">
+                                <div class="logo">
+                                    @include('media::admin.image_picker.single', [
+                                        'title' => trans('fptservice::fpt_services.form.logo'),
+                                        'inputName' => 'files[logo]',
+                                        'file' => (object) ['exists' => false],
+                                    ])
+                                </div>
                                 <div class="banner">
                                     @include('media::admin.image_picker.single', [
                                         'title' => trans('fptservice::fpt_services.form.banner'),
