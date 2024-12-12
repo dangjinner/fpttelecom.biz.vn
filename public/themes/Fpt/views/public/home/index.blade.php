@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="package_btn">
-                            <a href="#" class="btn_dk">Đăng ký ngay</a>
+                            <a href="{{ route('fpt.register.service', ['service' => $service->slug]) }}" class="btn_dk">Đăng ký ngay</a>
                         </div>
                     </div>
                 @endforeach
@@ -115,7 +115,7 @@
                 <div class="list_news">
                     @foreach($posts as $post)
                         <div class="news_item col-news">
-                            <a href="#">
+                            <a href="{{ $post->url() }}">
                                 <div class="img">
                                     <img src="{{ $post->logo->path }}" alt="{{ $post->name }}">
                                 </div>

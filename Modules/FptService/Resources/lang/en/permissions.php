@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'index' => 'Index Fpt Category',
-    'create' => 'Create Fpt Category',
-    'edit' => 'Edit Fpt Category',
-    'destroy' => 'Delete Fpt Category',
+    'index' => 'Index Fpt Service Customer',
+    'create' => 'Create Fpt Service Customer',
+    'edit' => 'Edit Fpt Service Customer',
+    'destroy' => 'Delete Fpt Service Customer',
 ];

@@ -2,11 +2,17 @@
 
 namespace Themes\Fpt\Http\Controllers;
 
+use HoangPhi\VietnamMap\Models\Ward;
 use Illuminate\Http\Request;
+use Modules\Core\Entities\District;
 use Modules\FptService\Entities\FptCategory;
+use Modules\FptService\Entities\FptService;
+use Modules\FptService\Entities\FptServiceCustomer;
 use Modules\Group\Entities\Group;
 use Modules\Post\Entities\Post;
+use Modules\Province\Entities\Province;
 use Modules\Slider\Entities\Slider;
+use Themes\Fpt\Http\Requests\RegisterFptServiceRequest;
 
 class HomeController
 {
@@ -48,8 +54,8 @@ class HomeController
             ->get();
 
         return view('public.services.category', compact(
-            'fptCategory',
-            'fptCategories')
+                'fptCategory',
+                'fptCategories')
         );
     }
 
@@ -81,6 +87,57 @@ class HomeController
         $group = $post->groups->first();
 
         return view('public.news.details', compact('post', 'banner', 'group'));
+    }
+
+    public function registerService(Request $request)
+    {
+        $fptService = FptService::where('slug', $request->get('service'))->first();
+        $provinces = Province::all();
+        $selectedService = FptService::where('slug', $request->get('service'))->first();
+        return view('public.services.register', compact('fptService', 'provinces', 'selectedService'));
+    }
+
+    public function postRegisterService(RegisterFptServiceRequest $request)
+    {
+        $data = $request->only(
+            'name',
+            'phone_number',
+            'home_address',
+            'property_type',
+            'apartment_name',
+            'building_name',
+            'floor_number',
+            'room_number',
+            'note',
+            'province_id',
+            'district_id',
+            'ward_id'
+        );
+
+        $fptService = FptService::where('slug', $request->get('service_slug'))->first();
+
+        $fptServiceCustomer = FptServiceCustomer::create(array_merge($data, [
+            'fpt_service_id' => $fptService ? $fptService->id : 0 ,
+        ]));
+
+        return redirect()->route('fpt.register.completed');
+    }
+
+    public function registerCompleted(Request $request)
+    {
+        return view('public.services.register_completed');
+    }
+
+    public function fptDistricts($provinceId)
+    {
+        $districts = District::where('province_id', $provinceId)->get();
+        return response()->json($districts);
+    }
+
+    public function fptWards($provinceId, $districtId)
+    {
+        $wards = Ward::where('district_id', $districtId)->get();
+        return response()->json($wards);
     }
 }
 

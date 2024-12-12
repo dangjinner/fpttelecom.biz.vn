@@ -35,7 +35,16 @@ class SidebarExtender extends BaseSidebarExtender
                     );
                 });
 
+                $item->item(trans('fptservice::fpt_service_customers.fpt_service_customers'), function (Item $item) {
+                    $item->weight(5);
+                    $item->route('admin.fpt_service_customers.index');
+                    $item->authorize(
+                        $this->auth->hasAccess('admin.fpt_service_customers.index')
+                    );
+                });
+
 // append
+
 
 
             });

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ v(Theme::url("assets/slick-1.8.1/slick/slick.css")) }}">
     <link rel="stylesheet" href="{{ v(Theme::url("assets/slick-1.8.1/slick/slick-theme.css")) }}">
     <link rel="stylesheet" href="{{ v(Theme::url("assets/css/font/fontawesome-free-5.15.4/css/all.min.css")) }}">
+    <link rel="stylesheet" href="{{ v(Theme::url("assets/libs/select2/style.min.css")) }}">
     <link rel="stylesheet" href="{{ v(Theme::url("assets/css/header.css")) }}">
     <link rel="stylesheet" href="{{ v(Theme::url("assets/css/footer.css")) }}">
     <link rel="stylesheet" href="{{ v(Theme::url("assets/css/css.css")) }}">
@@ -47,6 +48,7 @@
 <script src="{{ v(Theme::url('assets/js/popper.min.js')) }}"></script>
 <script src="{{ v(Theme::url('assets/js/bootstrap.min.js')) }}"></script>
 <script src="{{ v(Theme::url('assets/js/jquery.min.js')) }}"></script>
+<script src="{{ v(Theme::url('assets/libs/select2/select2.min.js')) }}"></script>
 <script src="{{ v(Theme::url('assets/slick-1.8.1/slick/slick.min.js')) }}"></script>
 <script src="{{ v(Theme::url('assets/js/js.js')) }}"></script>
 @stack('scripts')

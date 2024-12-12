@@ -15,7 +15,6 @@
         @slot('thead')
             <tr>
                 @include('admin::partials.table.select_all')
-                <th>{{ trans('fptservice::fpt_services.table.logo') }}</th>
                 <th>{{ trans('fptservice::fpt_services.table.name') }}</th>
                 <th>{{ trans('fptservice::fpt_services.table.price') }}</th>
                 <th>{{ trans('fptservice::fpt_services.table.status') }}</th>

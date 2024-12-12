@@ -1,17 +1,17 @@
 <?php
 
-namespace Themes\Fpt\Http\Requests;
+namespace Modules\FptService\Http\Requests;
 
 use Modules\Core\Http\Requests\Request;
 
-class SaveFptRequest extends Request
+class SaveFptServiceCustomerRequest extends Request
 {
     /**
      * Available attributes.
      *
      * @var string
      */
-    protected $availableAttributes = 'Fpt::attributes';
+    protected $availableAttributes = 'fptservice::attributes';
 
     /**
      * Get the validation rules that apply to the request.

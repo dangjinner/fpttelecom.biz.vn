@@ -86,6 +86,43 @@ Route::delete('fpt-categories/{ids?}', [
     'middleware' => 'can:admin.fpt_categories.destroy',
 ]);
 
+Route::get('fpt-service-customers', [
+    'as' => 'admin.fpt_service_customers.index',
+    'uses' => 'FptServiceCustomerController@index',
+    'middleware' => 'can:admin.fpt_service_customers.index',
+]);
+
+Route::get('fpt-service-customers/create', [
+    'as' => 'admin.fpt_service_customers.create',
+    'uses' => 'FptServiceCustomerController@create',
+    'middleware' => 'can:admin.fpt_service_customers.create',
+]);
+
+Route::post('fpt-service-customers', [
+    'as' => 'admin.fpt_service_customers.store',
+    'uses' => 'FptServiceCustomerController@store',
+    'middleware' => 'can:admin.fpt_service_customers.create',
+]);
+
+Route::get('fpt-service-customers/{id}/edit', [
+    'as' => 'admin.fpt_service_customers.edit',
+    'uses' => 'FptServiceCustomerController@edit',
+    'middleware' => 'can:admin.fpt_service_customers.edit',
+]);
+
+Route::put('fpt-service-customers/{id}', [
+    'as' => 'admin.fpt_service_customers.update',
+    'uses' => 'FptServiceCustomerController@update',
+    'middleware' => 'can:admin.fpt_service_customers.edit',
+]);
+
+Route::delete('fpt-service-customers/{ids?}', [
+    'as' => 'admin.fpt_service_customers.destroy',
+    'uses' => 'FptServiceCustomerController@destroy',
+    'middleware' => 'can:admin.fpt_service_customers.destroy',
+]);
+
 // append
+
 
 
