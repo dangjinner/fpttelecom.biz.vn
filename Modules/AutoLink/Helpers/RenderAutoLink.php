@@ -8,7 +8,7 @@ use Modules\AutoLink\Entities\AutoLink;
 
 class RenderAutoLink
 {
-    public static function handle($content, $pageType)
+    public static function handle($content, $pageType = true)
     {
         $autoLinks = AutoLink::all();
 

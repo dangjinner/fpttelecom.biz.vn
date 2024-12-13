@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://fptcamera.com.vn/sitemap.xml
+Sitemap: https://fpttellecom.vn/sitemap.xml

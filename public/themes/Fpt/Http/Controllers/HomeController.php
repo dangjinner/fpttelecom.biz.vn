@@ -7,9 +7,11 @@ use Artesaos\SEOTools\Facades\SEOTools;
 use HoangPhi\VietnamMap\Models\Ward;
 use Illuminate\Http\Request;
 use Modules\Core\Entities\District;
+use Modules\FptService\Emails\SendRegistedCustomerDataMail;
 use Modules\FptService\Entities\FptCategory;
 use Modules\FptService\Entities\FptService;
 use Modules\FptService\Entities\FptServiceCustomer;
+use Modules\FptService\Jobs\SendRegistedCustomerDataJob;
 use Modules\Group\Entities\Group;
 use Modules\Post\Entities\Post;
 use Modules\Province\Entities\Province;
@@ -158,6 +160,8 @@ class HomeController
         $fptServiceCustomer = FptServiceCustomer::create(array_merge($data, [
             'fpt_service_id' => $fptService ? $fptService->id : 0 ,
         ]));
+
+        SendRegistedCustomerDataJob::dispatch($fptServiceCustomer);
 
         return redirect()->route('fpt.register.completed');
     }

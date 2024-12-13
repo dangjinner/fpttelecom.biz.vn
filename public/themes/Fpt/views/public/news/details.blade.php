@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="article_content">
-               {!! $post->content !!}
+               {!! \Modules\AutoLink\Helpers\RenderAutoLink::handle($post->content) !!}
             </div>
             <div class="page_content-bt">
                 <ul class="facebook">
