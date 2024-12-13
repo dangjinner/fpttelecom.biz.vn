@@ -128,7 +128,7 @@
                     @endforeach
                 </div>
                 <div class="new_btn">
-                    <a href="#"> Xem tất cả <img src="{{ v(Theme::url('assets/img/icon/arrow-more.svg')) }}" alt=""></a>
+                    <a href="{{ route('fpt.news') }}"> Xem tất cả <img src="{{ v(Theme::url('assets/img/icon/arrow-more.svg')) }}" alt=""></a>
                 </div>
             </div>
         </div>

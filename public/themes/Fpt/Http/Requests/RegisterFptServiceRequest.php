@@ -2,9 +2,9 @@
 
 namespace Themes\Fpt\Http\Requests;
 
-use Modules\Core\Http\Requests\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterFptServiceRequest extends Request
+class RegisterFptServiceRequest extends FormRequest
 {
     protected function prepareForValidation()
     {
@@ -21,7 +21,7 @@ class RegisterFptServiceRequest extends Request
             'name' => 'required|string',
             'phone_number' => 'required|string|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'province_id' => 'required|int|exists:provinces,id',
-            'district_id' => 'int|exists:districts,id',
+            'district_id' => 'required|int|exists:districts,id',
             'ward_id' => 'required|int|exists:wards,id',
             'note' => 'nullable|string',
             'property_type' => 'required|int|in:1,2',
@@ -45,17 +45,17 @@ class RegisterFptServiceRequest extends Request
             'phone_number.regex' => 'Số điện thoại không đúng định dạng.',
             'phone_number.min' => 'Số điện thoại phải có ít nhất 10 ký tự.',
 
-            'province.required' => 'Tỉnh/thành phố là bắt buộc.',
-            'province.int' => 'Tỉnh/thành phố phải là một số nguyên hợp lệ.',
-            'province.exists' => 'Tỉnh/thành phố không tồn tại trong cơ sở dữ liệu.',
+            'province_id.required' => 'Tỉnh/thành phố là bắt buộc.',
+            'province_id.int' => 'Tỉnh/thành phố phải là một số nguyên hợp lệ.',
+            'province_id.exists' => 'Tỉnh/thành phố không tồn tại trong cơ sở dữ liệu.',
 
-            'district.required' => 'Quận/huyện là bắt buộc.',
-            'district.int' => 'Quận/huyện phải là một số nguyên hợp lệ.',
-            'district.exists' => 'Quận/huyện không tồn tại trong cơ sở dữ liệu.',
+            'district_id.required' => 'Quận/huyện là bắt buộc.',
+            'district_id.int' => 'Quận/huyện phải là một số nguyên hợp lệ.',
+            'district_id.exists' => 'Quận/huyện không tồn tại trong cơ sở dữ liệu.',
 
-            'ward.required' => 'Phường/xã là bắt buộc.',
-            'ward.int' => 'Phường/xã phải là một số nguyên hợp lệ.',
-            'ward.exists' => 'Phường/xã không tồn tại trong cơ sở dữ liệu.',
+            'ward_id.required' => 'Phường/xã là bắt buộc.',
+            'ward_id.int' => 'Phường/xã phải là một số nguyên hợp lệ.',
+            'ward_id.exists' => 'Phường/xã không tồn tại trong cơ sở dữ liệu.',
 
             'note.string' => 'Ghi chú phải là một chuỗi ký tự hợp lệ.',
 

@@ -1,4 +1,11 @@
 @extends('public.layout')
+
+@push('styles')
+    <style>
+
+    </style>
+@endpush
+
 @section('content')
     <div class="sec_step">
         <div class="container">
@@ -93,7 +100,7 @@
                                     </div>
                                     <div class="form_item">
                                         <label for="district-select" class="form-label">Quận/Huyện *</label>
-                                        <select name=district_id" id="district-select" class="@error('district_id') is-invalid @enderror">
+                                        <select name="district_id" id="district-select" class="@error('district_id') is-invalid @enderror">
                                         </select>
                                         @error('district_id')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -308,9 +315,11 @@
             $('#provinces-select').select2({
                 placeholder: 'Lựa chọn tỉnh/thành phố'
             });
+
             $('#district-select').select2({
                 placeholder: 'Lựa chọn quận/huyện'
             });
+
             $('#ward-select').select2({
                 placeholder: 'Lựa chọn xã/phường'
             });

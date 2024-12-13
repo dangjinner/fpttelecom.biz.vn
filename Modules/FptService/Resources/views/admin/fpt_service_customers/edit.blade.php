@@ -12,6 +12,7 @@
     <form method="POST" action="{{ route('admin.fpt_service_customers.update', $fptServiceCustomer) }}" class="form-horizontal" id="fpt-service-customer-edit-form" novalidate>
         {{ csrf_field() }}
         {{ method_field('put') }}
+        {!! $tabs->render(compact('fptServiceCustomer')) !!}
     </form>
 @endsection
 

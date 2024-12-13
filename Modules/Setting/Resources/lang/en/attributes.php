@@ -117,4 +117,9 @@ return [
     'supported_countries.*' => 'Supported Countries',
     'supported_locales.*' => 'Supported Locales',
     'supported_currencies.*' => 'Supported Currencies',
+
+    //SEO
+    'meta_title' => 'Meta Title',
+    'meta_description' => 'Meta Description',
+    'meta_keyword' => 'Meta Keyword'
 ];

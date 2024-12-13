@@ -4,6 +4,8 @@ namespace Modules\Group\Entities;
 
 use Modules\Media\Eloquent\HasMedia;
 use Modules\Media\Entities\File;
+use Modules\Meta\Eloquent\HasMetaData;
+use Modules\Meta\Entities\MetaData;
 use TypiCMS\NestableTrait;
 use Modules\Support\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
@@ -14,7 +16,7 @@ use Modules\Post\Entities\Post;
 class Group extends Model
 {
 
-    use Translatable, Sluggable, NestableTrait, HasMedia;
+    use Translatable, Sluggable, NestableTrait, HasMedia, HasMetaData;
 
     /**
      * The relations to eager load on every query.
@@ -62,7 +64,7 @@ class Group extends Model
     protected $slugAttribute = 'name';
 
     protected $appends = [
-        'logo'
+        'logo',
     ];
 
     /**
@@ -151,6 +153,24 @@ class Group extends Model
         return $this->files->where('pivot.zone', 'logo')->first() ?: new File;
     }
 
+    public function toArray()
+    {
+        $attributes = parent::toArray();
+
+        if ($this->relationLoaded('files')) {
+            $attributes += [
+                'logo' => [
+                    'id' => $this->logo->id,
+                    'path' => $this->logo->path,
+                    'exists' => $this->logo->exists,
+                ],
+                'meta' => $this->meta
+            ];
+        }
+
+        return $attributes;
+    }
+
     // public static function searchable()
     // {
     //     return Cache::tags('groups')
@@ -170,6 +190,4 @@ class Group extends Model
     // {
     //     return $this->belongsToMany(Post::class, 'post_groups');
     // }
-
-
 }

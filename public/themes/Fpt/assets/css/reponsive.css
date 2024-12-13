@@ -1,5 +1,5 @@
 @media screen and (min-width: 1500px) {
-    .row_header-top, .box_headmenu , .main_package, .box_quangcao, .main_box-news, .footer, .main_breadcrumb{
+    .row_header-top, .box_headmenu , .main_package, .box_quangcao, .main_box-news, .footer{
         max-width: 1440px;
         width: 1440px;
         margin: auto;
@@ -16,7 +16,7 @@
     .main_package .silder_package .slick-next {
         right: 21px !important;
     }
-    .page_content .container{
+    .page_content .container, .main_breadcrumb, .timkiem .container{
         max-width: 1200px;
         width: 1200px;
         margin: auto;
@@ -438,6 +438,12 @@
         text-align: left;
         align-items: flex-start;
     }
+    .timkiem_box{
+        align-items: center;
+    }
+    .other_news .list_item .text{
+        font-weight: 500;
+    }
 }
 
 @media screen and (max-width: 500px){
@@ -556,11 +562,25 @@
     .main_service .box_service-item a.title {
         font-size: 12px;
     }
+    .main_service .box_service {
+        overflow-x: scroll;
+        justify-content: flex-start;
+    }
+    .main_service .box_service-item {
+        min-width: 150px;
+    }
     .wrap_news-text .title {
         margin-top: 5px;
     }
     .box_list-news .news_item .new_img{
         padding-bottom: 15px;
+    }
+    .main_breadcrumb ul {
+        flex-wrap: wrap;
+    }
+    .main_breadcrumb ul li {
+        margin-bottom: 5px;
+        line-height: 25px;
     }
     .wrap_news-text a.read_more{
         font-size: 15px;
@@ -590,5 +610,36 @@
     }
     .featured{
         display: none;
+    }
+    .timkiem_box {
+        margin-bottom: 15px;
+    }
+    .timkiem .timkiem_title .box_title{
+        margin-top: 30px;
+    }
+    .timkiem .timkiem_title .box_title h3{
+        font-size: 20px;
+    }
+    .timkiem_form{
+        max-width: 100%;
+    }
+    .timkiem_form .seach_input{
+        max-width: 70%;
+        flex-basis: 70%;
+    }
+    .timkiem_form button{
+        max-width: 28%;
+        flex-basis: 28%;
+        padding: 5px 12px;
+        font-size: 15px;
+    }
+    .timkiem .ketqua span{
+        margin-top: 20px;
+    }
+    .timkiem_box .content .title{
+        margin-top: 5px;
+    }
+    .custom_pd_mb-left{
+        padding-left: 0px;
     }
 }

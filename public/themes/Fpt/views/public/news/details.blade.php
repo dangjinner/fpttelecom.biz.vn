@@ -72,4 +72,23 @@
         </div>
     </div>
 
+    <div class="other_news">
+        <div class="container">
+            <div class="box_title">
+                <img src="{{ v(Theme::url('assets/img/other-news.png')) }}" alt="other-news">
+                <h3>tin khác</h3>
+            </div>
+            <div class="other_news-list slider_other_news">
+                @foreach($otherPosts as $otherPost)
+                    <div class="list_item">
+                        <a href="{{ $otherPost->url() }}">
+                            <div class="img"><img src="{{ $otherPost->logo->path }}" alt="{{ $otherPost->name }}"></div>
+                            <div class="text">{{ $otherPost->name }}</div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
 @endsection

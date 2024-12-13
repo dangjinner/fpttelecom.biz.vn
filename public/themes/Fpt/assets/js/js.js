@@ -110,6 +110,57 @@ $(document).ready(function () {
           }
     ]
   });
+  // slider other news
+  $('.slider_other_news').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    autoplay: false,
+    infinite: false,
+    // autoplaySpeed: 2000,
+    responsive: [
+        {
+            breakpoint: 1500,
+            settings: {
+              slidesToShow: 5,
+              slidesToScroll: 1,
+              infinite: false,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 1025,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+              arrows: false
+            }
+          },
+          {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 3,
+              dots: false,
+              arrows: false,
+              slidesToScroll: 1
+    
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              centerMode: false,
+              infinite: true,
+            }
+          }
+    ]
+  });
 
   $("#checknha").click(function () {
     var ischecknha = $("#checknha").is(":checked");

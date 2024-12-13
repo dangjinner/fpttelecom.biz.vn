@@ -2,6 +2,8 @@
 
 namespace Themes\Fpt\Http\Controllers;
 
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\SEOTools;
 use HoangPhi\VietnamMap\Models\Ward;
 use Illuminate\Http\Request;
 use Modules\Core\Entities\District;
@@ -23,6 +25,12 @@ class HomeController
      */
     public function index()
     {
+        SEOMeta::setTitle(setting('fpt_home_meta_title'));
+        SEOMeta::setDescription(setting('fpt_home_meta_description'));
+        SEOMeta::addKeyword(setting('fpt_home_meta_keyword'));
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::twitter()->setSite(route('home'));
+
         $posts = Post::latest()->limit(8)->get();
         return view('public.home.' . setting('home_switcher'), [
             'posts' => $posts,
@@ -44,6 +52,12 @@ class HomeController
             return $this->fptNewsDetails($slug);
         }
 
+        SEOMeta::setTitle($fptCategory->meta->meta_title ?? $fptCategory->name);
+        SEOMeta::setDescription($fptCategory->meta->meta_description ?? $fptCategory->description);
+        SEOMeta::addKeyword($fptCategory->meta->meta_keyword);
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::twitter()->setSite(route('home'));
+
         if (!$fptCategory->parent_id && count($fptCategory->children) > 0) {
             $fptCategory = $fptCategory->children[0];
             return redirect()->route('fpt.services.category', ['slug' => $fptCategory->slug]);
@@ -61,6 +75,12 @@ class HomeController
 
     public function fptNews(Request $request)
     {
+        SEOMeta::setTitle(setting('fpt_news_meta_title') ?? 'Tin tức');
+        SEOMeta::setDescription(setting('fpt_news_meta_description'));
+        SEOMeta::addKeyword(setting('fpt_news_meta_description'));
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::twitter()->setSite(route('home'));
+
         $posts = Post::latest()->paginate(10);
         $banner = Slider::findWithSlides(setting('home_page_banner'));
         $groups = Group::searchable()
@@ -73,6 +93,13 @@ class HomeController
     public function fptNewsCategory($slug)
     {
         $currentGroup = Group::where('slug', $slug)->firstOrFail();
+
+        SEOMeta::setTitle($currentGroup->meta->meta_title ?? $currentGroup->name);
+        SEOMeta::setDescription($currentGroup->meta->meta_description);
+        SEOMeta::addKeyword($currentGroup->meta->meta_keyword);
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::twitter()->setSite(route('home'));
+
         $posts = $currentGroup->posts()->latest()->paginate(10);
         $banner = Slider::findWithSlides(setting('home_page_banner'));
         $groups = $currentGroup->children;
@@ -83,14 +110,26 @@ class HomeController
     public function fptNewsDetails($slug)
     {
         $post = Post::where('slug', $slug)->firstOrFail();
+
+        SEOMeta::setTitle($post->meta->meta_title ?? $post->name);
+        SEOMeta::setDescription($post->meta->meta_description);
+        SEOMeta::addKeyword($post->meta->meta_keyword);
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::twitter()->setSite(route('home'));
+
         $banner = Slider::findWithSlides(setting('home_page_banner'));
         $group = $post->groups->first();
+        $otherPosts = Post::latest()
+            ->whereNotIn('id', [$post->id])
+            ->limit(8)->get();
 
-        return view('public.news.details', compact('post', 'banner', 'group'));
+        return view('public.news.details', compact('post', 'banner', 'group', 'otherPosts'));
     }
 
     public function registerService(Request $request)
     {
+        SEOMeta::setTitle('Đăng ký thông tin');
+
         $fptService = FptService::where('slug', $request->get('service'))->first();
         $provinces = Province::all();
         $selectedService = FptService::where('slug', $request->get('service'))->first();
@@ -125,6 +164,7 @@ class HomeController
 
     public function registerCompleted(Request $request)
     {
+        SEOMeta::setTitle('Đăng ký thành công!');
         return view('public.services.register_completed');
     }
 

@@ -10,6 +10,7 @@
 @section('content')
     <form method="POST" action="{{ route('admin.fpt_service_customers.store') }}" class="form-horizontal" id="fpt-service-customer-create-form" novalidate>
         {{ csrf_field() }}
+        {!! $tabs->render(compact('fptServiceCustomer')) !!}
     </form>
 @endsection
 

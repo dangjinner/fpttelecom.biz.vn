@@ -5,14 +5,17 @@ namespace Modules\FptService\Entities;
 use Illuminate\Support\Facades\Cache;
 use Modules\Media\Eloquent\HasMedia;
 use Modules\Media\Entities\File;
+use Modules\Meta\Eloquent\HasMetaData;
+use Modules\Meta\Entities\MetaData;
 use Modules\Support\Eloquent\Model;
 use Modules\Support\Eloquent\Sluggable;
 use Modules\Support\Eloquent\Translatable;
+use PhpOffice\PhpSpreadsheet\Writer\Ods\Meta;
 use TypiCMS\NestableTrait;
 
 class FptCategory extends Model
 {
-    use Translatable, Sluggable, NestableTrait, HasMedia;
+    use Translatable, Sluggable, NestableTrait, HasMedia, HasMetaData;
 
     /**
      * The relations to eager load on every query.
@@ -54,7 +57,7 @@ class FptCategory extends Model
 
     protected $appends = [
         'banner',
-        'logo'
+        'logo',
     ];
 
     /**
@@ -135,5 +138,28 @@ class FptCategory extends Model
             'fpt_category_id',
             'fpt_service_id'
         );
+    }
+
+    public function toArray()
+    {
+        $attributes = parent::toArray();
+
+        if ($this->relationLoaded('files')) {
+            $attributes += [
+                'logo' => [
+                    'id' => $this->logo->id,
+                    'path' => $this->logo->path,
+                    'exists' => $this->logo->exists,
+                ],
+                'banner' => [
+                    'id' => $this->banner->id,
+                    'path' => $this->banner->path,
+                    'exists' => $this->banner->exists,
+                ],
+                'meta' => $this->meta
+            ];
+        }
+
+        return $attributes;
     }
 }

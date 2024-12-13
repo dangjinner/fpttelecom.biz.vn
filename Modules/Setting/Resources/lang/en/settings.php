@@ -8,6 +8,7 @@ return [
             'social_logins' => 'Social Logins',
             'shipping_methods' => 'Shipping Methods',
             'payment_methods' => 'Payment Methods',
+            'seo_settings' => 'SEO Settings',
         ],
         'themes' => 'Themes',
         'general' => 'General',
@@ -30,6 +31,7 @@ return [
         'cod' => 'Cash On Delivery',
         'bank_transfer' => 'Bank Transfer',
         'check_payment' => 'Check / Money Order',
+        'seo_default' => 'SEO Default',
     ],
     'form' => [
         'allow_reviews' => 'Allow customers to give reviews & ratings',

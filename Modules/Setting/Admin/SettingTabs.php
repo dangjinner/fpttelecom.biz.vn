@@ -31,6 +31,9 @@ class SettingTabs extends Tabs
             ->add($this->newsletter())
             ->add($this->customCssJs());
 
+        $this->group('seo_settings', trans('setting::settings.tabs.group.seo_settings'))
+            ->add($this->seoDefaultSetting());
+
         $this->group('social_logins', trans('setting::settings.tabs.group.social_logins'))
             ->add($this->facebook())
             ->add($this->google());
@@ -367,4 +370,11 @@ class SettingTabs extends Tabs
         });
     }
 
+    public function seoDefaultSetting()
+    {
+        return tap(new Tab('seo_default_settings', trans('setting::settings.tabs.seo_default')), function (Tab $tab) {
+            $tab->weight(1);
+            $tab->view('setting::admin.settings.tabs.seo.default');
+        });
+    }
 }

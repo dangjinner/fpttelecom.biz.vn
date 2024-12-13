@@ -10,5 +10,11 @@ return [
         'address' => 'Address',
         'created_at' => 'Created at',
         'service' => 'Service',
+    ],
+    'tabs' => [
+        'group' => [
+            'fpt_service_customers_information' => 'Customer Information',
+        ],
+        'general' => 'General',
     ]
 ];

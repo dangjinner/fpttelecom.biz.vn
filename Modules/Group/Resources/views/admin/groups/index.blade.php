@@ -66,9 +66,24 @@
                             </div>
                             <div id="seo" class="tab-pane fade">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-10">
                                         <div class="hide" id="slug-field">
                                             {{ Form::text('slug', trans('group::attributes.slug'), $errors) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div>
+                                            {{ Form::text('meta[meta_title]', trans('fptservice::attributes.meta_title'), $errors) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div>
+                                            {{ Form::text('meta[meta_keyword]', trans('fptservice::attributes.meta_keyword'), $errors) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div>
+                                            {{ Form::textarea('meta[meta_description]', trans('fptservice::attributes.meta_description'), $errors) }}
                                         </div>
                                     </div>
                                 </div>
