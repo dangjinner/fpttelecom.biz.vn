@@ -1,5 +1,11 @@
 @extends('public.layout')
 
+@push('styles')
+    <style>
+
+    </style>
+@endpush
+
 @section('content')
     <div class="main_banner">
         <div class="banner_slider">

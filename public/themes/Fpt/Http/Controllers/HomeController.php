@@ -13,6 +13,7 @@ use Modules\FptService\Entities\FptService;
 use Modules\FptService\Entities\FptServiceCustomer;
 use Modules\FptService\Jobs\SendRegistedCustomerDataJob;
 use Modules\Group\Entities\Group;
+use Modules\Page\Entities\Page;
 use Modules\Post\Entities\Post;
 use Modules\Province\Entities\Province;
 use Modules\Slider\Entities\Slider;
@@ -111,7 +112,11 @@ class HomeController
 
     public function fptNewsDetails($slug)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
+        $post = Post::where('slug', $slug)->first();
+
+        if (empty($post)) {
+            return $this->pageDetails($slug);
+        }
 
         SEOMeta::setTitle($post->meta->meta_title ?? $post->name);
         SEOMeta::setDescription($post->meta->meta_description);
@@ -126,6 +131,19 @@ class HomeController
             ->limit(8)->get();
 
         return view('public.news.details', compact('post', 'banner', 'group', 'otherPosts'));
+    }
+
+    public function pageDetails($slug)
+    {
+        $page = Page::where('slug', $slug)->firstOrFail();
+
+        SEOMeta::setTitle($page->meta->meta_title ?? $page->name);
+        SEOMeta::setDescription($page->meta->meta_description);
+        SEOMeta::addKeyword($page->meta->meta_keyword);
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::twitter()->setSite(route('home'));
+
+        return view('public.pages.show', compact('page'));
     }
 
     public function registerService(Request $request)

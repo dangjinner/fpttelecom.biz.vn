@@ -61,6 +61,28 @@
     width: 100%;
 }
 
+.page_content * {
+    margin: revert;
+    padding: revert;
+    border: revert;
+    font-size: revert;
+    font: revert;
+    vertical-align: revert;
+}
+
+.page_content .widget-toc {
+    padding: 10px;
+    width: 100%;
+}
+
+.page_content .show-toc-toggle-btn {
+    font-size: 15px;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
 
 @media screen and (max-width: 500px) {
     .box_contact-scroll .scroll_contact .call, .box_contact-scroll .scroll_contact .cart, .box_contact-scroll .croll-top {
