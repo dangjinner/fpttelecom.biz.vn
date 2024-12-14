@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://fpt-internet.app/pages_sitemap.xml</loc>
+    
+        <lastmod>2024-12-14T14:19:33+07:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://fpt-internet.app/posts_sitemap.xml</loc>
+    
+        <lastmod>2024-12-14T14:19:33+07:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://fpt-internet.app/services_sitemap.xml</loc>
+    
+        <lastmod>2024-12-14T14:19:33+07:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://fpt-internet.app/post_categories_sitemap.xml</loc>
+    
+        <lastmod>2024-12-14T14:19:33+07:00</lastmod>
+    </sitemap>
+</sitemapindex>

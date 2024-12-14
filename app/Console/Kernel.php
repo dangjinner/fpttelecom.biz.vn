@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\ScaffoldModuleCommand::class,
         Commands\ScaffoldEntityCommand::class,
+        Commands\GenerateSitemapCommand::class
     ];
 
     /**
@@ -27,6 +28,10 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('queue:work --stop-when-empty')
             ->everyMinute()
+            ->withoutOverlapping();
+
+        $schedule->command('sitemap:generate')
+            ->daily()
             ->withoutOverlapping();
     }
 }

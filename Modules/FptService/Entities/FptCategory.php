@@ -162,4 +162,14 @@ class FptCategory extends Model
 
         return $attributes;
     }
+
+    public function scopeSearchable($query)
+    {
+        return $query->where('is_searchable', true);
+    }
+
+    public function url()
+    {
+        return route('fpt.services.category', ['slug' => $this->slug]);
+    }
 }

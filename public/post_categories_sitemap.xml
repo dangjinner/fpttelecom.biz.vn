@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://fpt-internet.app/tin-tuc</loc>
+        <lastmod>2024-12-14T14:19:33+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fpt-internet.app/tin-tuc/khuyen-mai</loc>
+        <lastmod>2024-12-06T22:16:05+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fpt-internet.app/tin-tuc/tin-tuc-fpt</loc>
+        <lastmod>2024-12-11T16:42:34+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
