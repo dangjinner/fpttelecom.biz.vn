@@ -16,12 +16,12 @@
     .main_package .silder_package .slick-next {
         right: 21px !important;
     }
-    .page_content .container, .main_breadcrumb, .timkiem .container{
+    .page_content .container, .main_breadcrumb, .timkiem .container, .page_news .container{
         max-width: 1200px;
         width: 1200px;
         margin: auto;
     }
-    
+
 }
 @media screen and (min-width: 1200px){
     .order_info{
@@ -36,6 +36,11 @@
     }
     footer .footer_bt .footer_right{
         padding-left: 16px;
+    }
+    .page_news .container, .main_breadcrumb{
+        max-width: 1200px;
+        width: 1200px;
+        margin: auto;
     }
 }
 @media screen and (max-width: 1380px) {
@@ -97,7 +102,7 @@
         background-color: #ccc;
         border-radius: 5px;
     }
-    
+
 
 }
 @media screen and (max-width: 768px){
@@ -293,7 +298,7 @@
     .main_package .silder_package .slick-prev, .main_package .silder_package .slick-next{
         display: none !important;
     }
-    
+
     .main_banner {
         padding-top: 70px;
     }
