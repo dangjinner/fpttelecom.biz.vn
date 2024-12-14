@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="package_btn">
-                            <a href="{{ route('fpt.register.service', ['service' => $service->slug]) }}" class="btn_dk">Đăng ký ngay</a>
+                            <a href="{{ $service->registerUrl() }}" class="btn_dk">Đăng ký ngay</a>
                         </div>
                     </div>
                 @endforeach

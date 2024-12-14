@@ -123,4 +123,9 @@ class FptService extends Model
     {
         $this->fptCategories()->sync(array_get($attributes, 'fpt_categories', []));
     }
+
+    public function registerUrl()
+    {
+        return route('fpt.register.service', ['service' => $this->slug]);
+    }
 }

@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="package_btn">
-                        <a href="#" class="btn_dk">Đăng ký ngay</a>
+                        <a href="{{ $fptService->registerUrl() }}" class="btn_dk">Đăng ký ngay</a>
                     </div>
                 </div>
             @endforeach
