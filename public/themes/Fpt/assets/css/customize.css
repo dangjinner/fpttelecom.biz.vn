@@ -43,7 +43,7 @@
 }
 
 .scroll_contact ul li a, .croll-top a {
-    background: #fd8515;
+    /*background: #fd8515;*/
 }
 
 .croll-top a {
@@ -52,6 +52,10 @@
 
 .scroll_contact .zalo img {
     width: 33px;
+}
+
+.scroll_contact li a {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 
