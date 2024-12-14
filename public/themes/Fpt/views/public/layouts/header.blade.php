@@ -113,136 +113,51 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div class="box_login">
-                            <a href="#" class="login">
-                                <img src="{{ v(Theme::url('assets/img/icon/mb_user.svg')) }}" alt="Đăng nhập">
-                                Đăng nhập
-                            </a>
-                        </div>
+{{--                        <div class="box_login">--}}
+{{--                            <a href="#" class="login">--}}
+{{--                                <img src="{{ v(Theme::url('assets/img/icon/mb_user.svg')) }}" alt="Đăng nhập">--}}
+{{--                                Đăng nhập--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
                         <ul class="list_menu-mb">
-                            <li class="menu_mb-item">
-                                <input type="checkbox" name="accordion-1" id="mb01">
-                                <label for="mb01" class="tab__label">Sảm phẩm dịch vụ</label>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li class="tab_title"><a href="#"> <span class="icon-sub"><img
-                                                            src="{{ v(Theme::url('assets/img/icon/icon-internet-fpt.png')) }}"
-                                                            alt=""></span> <span
-                                                        class="title_sub">Internet Cáp Quang</span></a></li>
-                                        <li><a class="sub-item" href="#">Internet cá nhân</a></li>
-                                        <li><a class="sub-item" href="#">Internet gia đình</a></li>
-                                        <li><a class="sub-item" href="#">Internet doanh nghiêp</a></li>
-                                        <li><a class="sub-item" href="#">Internet game thủ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li class="tab_title"><a href="#"> <span class="icon-sub"><img
-                                                            src="{{ v(Theme::url('assets/img/icon/icon-internet-fpt.png')) }}"
-                                                            alt=""></span> <span
-                                                        class="title_sub">Internet Cáp Quang</span></a></li>
-                                        <li><a class="sub-item" href="#">Internet cá nhân</a></li>
-                                        <li><a class="sub-item" href="#">Internet gia đình</a></li>
-                                        <li><a class="sub-item" href="#">Internet doanh nghiêp</a></li>
-                                        <li><a class="sub-item" href="#">Internet game thủ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li class="tab_title"><a href="#"> <span class="icon-sub"><img
-                                                            src="{{ v(Theme::url('assets/img/icon/icon-internet-fpt.png')) }}"
-                                                            alt=""></span> <span
-                                                        class="title_sub">Internet Cáp Quang</span></a></li>
-                                        <li><a class="sub-item" href="#">Internet cá nhân</a></li>
-                                        <li><a class="sub-item" href="#">Internet gia đình</a></li>
-                                        <li><a class="sub-item" href="#">Internet doanh nghiêp</a></li>
-                                        <li><a class="sub-item" href="#">Internet game thủ</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu_mb-item other">
-                                <input type="checkbox" name="accordion-1" id="mb02">
-                                <label for="mb02" class="tab__label">Tin tức $ khuyến mãi</label>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li><a class="sub-item" href="#">Tin tức</a></li>
-                                        <li><a class="sub-item" href="#">khuyến mãi</a></li>
-                                    </ul>
-                                </div>
+                            @foreach($primaryMenu->menus() as $index => $menuItem)
+                                @php
+                                    $hasSubMenuItem = false;
 
+                                    foreach ($menuItem->subMenus() as $subMenu) {
+                                        if (count($subMenu->items()) > 0) {
+                                            $hasSubMenuItem = true;
+                                            break;
+                                        }
+                                    }
+                                @endphp
+                                <li class="menu_mb-item @if(!$hasSubMenuItem && count($menuItem->subMenus()) > 0) other @elseif(count($menuItem->subMenus()) == 0) secondary @endif">
+                                    @if(count($menuItem->subMenus()) > 0)
+                                        <input type="checkbox" name="accordion-1" id="mb{{ $menuItem->id() }}">
+                                        <label for="mb{{ $menuItem->id() }}" class="tab__label">{{ $menuItem->name() }}</label>
+                                        <div class="tab__content">
+                                            <ul class="tab_content-item">
+                                                @foreach($menuItem->subMenus() as $subMenu)
+                                                    @if(count($subMenu->items()) > 0)
+                                                        <li class="tab_title"><a href="{{ $subMenu->url() }}"> <span class="icon-sub"><img
+                                                                            src="{{ $subMenu->backgroundImage()->path }}"
+                                                                            alt="{{ $subMenu->name() }}"></span> <span
+                                                                        class="title_sub">{{ $subMenu->name() }}</span></a></li>
+                                                    @else
+                                                        <li><a class="sub-item" href="{{ $subMenu->url() }}">{{ $subMenu->name() }}</a></li>
+                                                    @endif
 
-                            </li>
-                            <li class="menu_mb-item other">
-                                <input type="checkbox" name="accordion-1" id="mb03">
-                                <label for="mb03" class="tab__label">Ưu đãi</label>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li><a class="sub-item" href="#">Khách hàng thân thiết</a></li>
-                                        <li><a class="sub-item" href="#">Giới thiệu bạn bè</a></li>
-                                    </ul>
-                                </div>
-
-
-                            </li>
-                            <li class="menu_mb-item">
-                                <input type="checkbox" name="accordion-1" id="mb04">
-                                <label for="mb04" class="tab__label">Hỗ trợ</label>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li class="tab_title"><a href="#"> <span class="icon-sub"><img
-                                                            src="{{ v(Theme::url('assets/img/icon/icon-internet-fpt.png')) }}"
-                                                            alt=""></span> <span
-                                                        class="title_sub">Internet Cáp Quang</span></a></li>
-                                        <li><a class="sub-item" href="#">Internet cá nhân</a></li>
-                                        <li><a class="sub-item" href="#">Internet gia đình</a></li>
-                                        <li><a class="sub-item" href="#">Internet doanh nghiêp</a></li>
-                                        <li><a class="sub-item" href="#">Internet game thủ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li class="tab_title"><a href="#"> <span class="icon-sub"><img
-                                                            src="{{ v(Theme::url('assets/img/icon/icon-internet-fpt.png')) }}"
-                                                            alt=""></span> <span
-                                                        class="title_sub">Internet Cáp Quang</span></a></li>
-                                        <li><a class="sub-item" href="#">Internet cá nhân</a></li>
-                                        <li><a class="sub-item" href="#">Internet gia đình</a></li>
-                                        <li><a class="sub-item" href="#">Internet doanh nghiêp</a></li>
-                                        <li><a class="sub-item" href="#">Internet game thủ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li class="tab_title"><a href="#"> <span class="icon-sub"><img
-                                                            src="{{ v(Theme::url('assets/img/icon/icon-internet-fpt.png')) }}"
-                                                            alt=""></span> <span
-                                                        class="title_sub">Internet Cáp Quang</span></a></li>
-                                        <li><a class="sub-item" href="#">Internet cá nhân</a></li>
-                                        <li><a class="sub-item" href="#">Internet gia đình</a></li>
-                                        <li><a class="sub-item" href="#">Internet doanh nghiêp</a></li>
-                                        <li><a class="sub-item" href="#">Internet game thủ</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu_mb-item other">
-                                <input type="checkbox" name="accordion-1" id="mb05">
-                                <label for="mb05" class="tab__label">Khác</label>
-                                <div class="tab__content">
-                                    <ul class="tab_content-item">
-                                        <li><a class="sub-item" href="#">Đăng ký online</a></li>
-                                        <li><a class="sub-item" href="#">Member FPT</a></li>
-                                        <li><a class="sub-item" href="#">Thanh toán online</a></li>
-                                    </ul>
-                                </div>
-
-
-                            </li>
-                            <li class="menu_mb-item secondary">
-                                <a href="#">Khách hàng cá nhân</a>
-                            </li>
-                            <li class="menu_mb-item secondary">
-                                <a href="#">Khách hàng doanh nghiệp</a>
-                            </li>
+                                                    @foreach($subMenu->items() as $subMenuItem)
+                                                            <li><a class="sub-item" href="{{ $subMenuItem->url() }}">{{ $subMenuItem->name() }}</a></li>
+                                                    @endforeach
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @else
+                                        <a href="{{ $menuItem->url() }}">{{ $menuItem->name() }}</a>
+                                    @endif
+                                </li>
+                            @endforeach
                         </ul>
 
                     </div>
