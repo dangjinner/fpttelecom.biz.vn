@@ -2,24 +2,61 @@
 
 @section('title', trans('fpt::404.404'))
 
+@push('styles')
+    <style>
+        .container {
+            max-width: 600px;
+            padding: 80px 20px;
+        }
+        .error-title {
+            font-size: 100px;
+            font-weight: bold;
+            color: #f68b1e;
+            margin: 0;
+        }
+        .error-subtitle {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .error-description {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .error-image {
+            margin: 20px 0;
+        }
+        .error-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .error-actions {
+            margin: 20px 0;
+        }
+        .error-actions a {
+            text-decoration: none;
+            background-color: #f68b1e;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .error-actions a:hover {
+            background-color: #d9771a;
+        }
+    </style>
+@endpush
+
 @section('content')
-    <section class="error-page-wrap">
-        <div class="container">
-            <div class="row error-page">
-                <div class="col-xl-7 col-lg-8 col-md-18 error-page-left">
-                    <h1 class="section-title">{{ trans('fpt::404.page_not_found') }}</h1>
-
-                    <p>{{ trans('fpt::404.unable_to_find_the_page') }}</p>
-
-                    <a href="{{ route('home') }}" class="btn btn-default btn-back-to-home">
-                        {{ trans('fpt::404.back_to_home') }}
-                    </a>
-                </div>
-
-                <div class="col-xl-6 col-lg-7 col-md-18 error-page-right">
-                    <img src="{{ Theme::url('public/images/404.svg') }}" class="error-image" alt="error image">
-                </div>
-            </div>
+    <div class="container">
+        <div class="error-title">404</div>
+        <div class="error-subtitle">Không tìm thấy trang!</div>
+        <div class="error-description">
+            Xin lỗi, chúng tôi không thể tìm thấy trang mà bạn yêu cầu.<br>
+            Vui lòng kiểm tra lại URL hoặc quay lại trang chủ.
         </div>
-    </section>
+        <div class="error-actions">
+            <a href="/">Quay Lại Trang Chủ</a>
+        </div>
+    </div>
 @endsection
