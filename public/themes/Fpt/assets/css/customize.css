@@ -61,7 +61,7 @@
     width: 100%;
 }
 
-.page_content * {
+.page_content .article_content * {
     margin: revert;
     padding: revert;
     border: revert;
