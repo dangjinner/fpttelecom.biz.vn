@@ -37,7 +37,7 @@
                             }
                         @endphp
                         <li class="menu_item @if(!$hasSubMenuItem) other @endif">
-                            <a class="item" href="#">{{ $menuItem->name() }}
+                            <a class="item" href="{{ $menuItem->url() }}">{{ $menuItem->name() }}
                                 @if(count($menuItem->subMenus()) > 0)
                                     <div class="arrow"></div>
                                 @endif
@@ -49,16 +49,16 @@
                                             <ul class="megamenu_list">
                                                 @if($hasSubMenuItem)
                                                     <li class="megamenu_title">
-                                                        <a href="#"> <span class="icon-sub"><img
+                                                        <a href="{{ $subMenu->url() }}"> <span class="icon-sub"><img
                                                                         src="{{ $subMenu->backgroundImage()->path }}"
-                                                                        alt=""></span> <span
+                                                                        alt="{{ $subMenu->name() }}"></span> <span
                                                                     class="title_sub">{{ $subMenu->name() }}</span></a></li>
                                                 @else
-                                                    <li><a class="sub-item" href="#">{{ $subMenu->name() }}</a></li>
+                                                    <li><a class="sub-item" href="{{ $subMenu->url() }}">{{ $subMenu->name() }}</a></li>
                                                 @endif
 
                                                 @foreach($subMenu->items() as $subMenuItem)
-                                                    <li><a class="sub-item" href="#">{{ $subMenuItem->name() }}</a></li>
+                                                    <li><a class="sub-item" href="{{ $subMenuItem->url() }}">{{ $subMenuItem->name() }}</a></li>
                                                 @endforeach
                                             </ul>
                                         @endforeach
