@@ -14,14 +14,16 @@ $(document).ready(function () {
     $(".nav-search-close-button").click(function () {
         $(this).parent().toggle();
     });
+
   // banner slider
   $('.slider_item').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
-    autoplay: false,
-    // autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
   });
+
   // slider gói đề xuất
   $('.silder_package').slick({
     slidesToShow: 4,
