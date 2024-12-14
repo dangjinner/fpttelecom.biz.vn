@@ -2,6 +2,7 @@
 
 namespace FleetCart\Exceptions;
 
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Throwable;
 use Illuminate\Http\Request;
 use Swift_TransportException;
@@ -69,6 +70,7 @@ class Handler extends ExceptionHandler
         }
 
         if ($this->shouldShowNotFoundPage($e)) {
+            SEOMeta::setTitle(trans('fpt::404.404'));
             return response()->view('errors.404');
         }
 
