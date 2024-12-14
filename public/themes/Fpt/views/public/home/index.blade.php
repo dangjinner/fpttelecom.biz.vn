@@ -72,7 +72,7 @@
                 <div class="slider_internet">
                     @foreach($internetPackagesSlider->slides as $slide)
                         <div class="internet_item">
-                            <a href="{{ $slide->call_to_action_url }}">
+                            <a href="{{ $slide->call_to_action_url }}" @if($slide->open_in_new_window) target="_blank" @endif>
                                 <img src="{{ $slide->file->path }}" alt="{{ $slide->caption_1 }}">
                             </a>
                         </div>
@@ -87,7 +87,7 @@
                 @if(isset($promotionSlider->slides[0]))
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="quangcao_right">
-                            <a href="{{ $promotionSlider->slides[0]->call_to_action_url }}">
+                            <a href="{{ $promotionSlider->slides[0]->call_to_action_url }}" @if($promotionSlider->slides[0]->open_in_new_window) target="_blank" @endif>
                                 <img src="{{ $promotionSlider->slides[0]->file->path }}" alt="{{ $promotionSlider->slides[0]->caption_1 }}">
                             </a>
                         </div>
@@ -97,7 +97,7 @@
                     <div class="quangcao_left">
                         @foreach($promotionSlider->slides as $pIndex => $pSlide)
                             @if($pIndex > 0)
-                                <a href="{{ $pSlide->call_to_action_url }}"><img src="{{ $pSlide->file->path }}" alt="{{ $pSlide->caption_1 }}"></a>
+                                <a href="{{ $pSlide->call_to_action_url }}" @if($pSlide->open_in_new_window) target="_blank" @endif><img src="{{ $pSlide->file->path }}" alt="{{ $pSlide->caption_1 }}"></a>
                             @endif
                         @endforeach
                     </div>

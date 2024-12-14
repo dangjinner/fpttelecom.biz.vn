@@ -42,3 +42,27 @@
     position: absolute;
 }
 
+.scroll_contact ul li a, .croll-top a {
+    background: #fd8515;
+}
+
+.croll-top a {
+    border: none;
+}
+
+.scroll_contact .zalo img {
+    width: 33px;
+}
+
+
+.main_package .silder_package .slick-list{
+    width: 100%;
+}
+
+
+@media screen and (max-width: 500px) {
+    .box_contact-scroll .scroll_contact .call, .box_contact-scroll .scroll_contact .cart, .box_contact-scroll .croll-top {
+         display: block !important;
+    }
+}
+
