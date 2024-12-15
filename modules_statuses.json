@@ -33,7 +33,7 @@
     "Brand": false,
     "Newsletter": true,
     "Tag": true,
-    "Tagp": false,
+    "Tagp": true,
     "Import": true,
     "Address": true,
     "Post": true,
