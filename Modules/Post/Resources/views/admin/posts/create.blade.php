@@ -239,7 +239,7 @@
     <div class="row wrapper-content">
         <div class="col-lg-9 col-md-9 sidebar-left">
             @include('post::admin.posts.tabs.general')
-             @include('post::admin.posts.tabs.shortcode')
+            @include('post::admin.posts.tabs.shortcode')
             @include('post::admin.posts.tabs.seo')
             <div id="options-group" class="sortable">
                 <div class="content-accordion panel-group options-group-wrapper" id="option-0">

@@ -3,6 +3,7 @@
 namespace Modules\Post\Http\Controllers\Admin;
 
 use Modules\Admin\Traits\HasCrudActions;
+use Modules\FptService\Entities\FptCategory;
 use Modules\Post\Entities\Post;
 use Modules\Post\Http\Requests\SavePostRequest;
 use Illuminate\Http\Request;
@@ -81,6 +82,7 @@ class PostController
             'groups'    => Group::treeList(),
             'tags'    => TagP::all()->pluck('name', 'id')->toArray(),
             'categories' => Category::treeList(),
+            'fptCategories' => FptCategory::treeList()
         ], $this->getFormData('create'));
         return view("{$this->viewPath}.create", $data);
     }
@@ -104,6 +106,7 @@ class PostController
             'tags'              => TagP::all()->pluck('name', 'id')->toArray(),
             'tagsChecked'       => $tagsChecked,
             'categories' => Category::treeList(),
+            'fptCategories' => FptCategory::treeList()
         ], $this->getFormData('edit', $id));
 
         return view("{$this->viewPath}.edit", $data);

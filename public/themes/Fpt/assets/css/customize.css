@@ -64,10 +64,26 @@
 .page_content .article_content * {
     margin: revert;
     padding: revert;
-    border: revert;
     font-size: revert;
     font: revert;
     vertical-align: revert;
+}
+
+.page_content .article_content .main_package * {
+    margin: initial;
+}
+
+.main_package .fpt_category_shortcode_slider .slick-slide {
+    margin: 0 12px;
+}
+
+.main_package .fpt_category_shortcode_slider .package_btn {
+    padding: 0 24px 2px;
+    margin-bottom: 20px;
+}
+
+.main_package .fpt_category_shortcode_slider .package_content ul {
+      padding: 0;
 }
 
 .page_content .widget-toc {

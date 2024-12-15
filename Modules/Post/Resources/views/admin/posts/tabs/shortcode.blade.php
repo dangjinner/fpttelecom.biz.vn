@@ -21,45 +21,34 @@
                         <div class="col-md-9">
                             <select name="shortcode" class="form-control form-select">
                                 <option value="">Select</option>
-                                <option value="product_list">Product List</option>
-                                <option value="single_product">Single Product</option>
+                                <option value="fpt_category">FPT Category</option>
+                                <option value="fpt_service">FPT Service</option>
                             </select>
                         </div>
                     </div>
-                    <div id="additional-options-product-list">
-                        <div style="display: none" id="short_category_box">
-                            {{ Form::select('shortcode_category_id', 'Category', $errors, $categories, null, ['class' =>
-                            'selectize prevent-creation', 'multiple' => true, ]) }}
-                        </div>
-                        <div style="display: none" id="shortcode_product_limit_box">
-                            {{ Form::text('shortcode_product_limit', 'Limited Quantity', $errors, null,[
-                                'type' => 'number'
-                            ]) }}
-                        </div>
-                        <div style="display: none" id="shortcode_product_col_box">
-                            {{ Form::text('shortcode_product_col', 'Item Per Row', $errors, null, [
-                                'min' => 1,
-                                'type' => 'number'
-                            ]) }}
-                        </div>
+
+                    <div id="additional-options-fpt_category" style="display: none">
+                        {{ Form::select('fpt_category_id', trans('post::attributes.fpt_category_id'), $errors, $fptCategories, null, ['required' => true]) }}
                     </div>
-                    <div id="additional-options-single-product" style="display: none ">
-                        <div >
-                            {{ Form::text('shortcode_product_id', 'Product ID', $errors, null,[
-                              'type' => 'number'
-                          ]) }}
-                        </div>
-                        <div style="display:none;" id="shortcode-single-product-desc">
-                            {{ Form::textarea('shortcode_single_product_desc', 'Description', $errors, null) }}
-                        </div>
-                    </div>
+
+                    {{--                    <div id="additional-options-single-product" style="display: none ">--}}
+                    {{--                        <div >--}}
+                    {{--                            {{ Form::text('shortcode_product_id', 'Product ID', $errors, null,[--}}
+                    {{--                              'type' => 'number'--}}
+                    {{--                          ]) }}--}}
+                    {{--                        </div>--}}
+                    {{--                        <div style="display:none;" id="shortcode-single-product-desc">--}}
+                    {{--                            {{ Form::textarea('shortcode_single_product_desc', 'Description', $errors, null) }}--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+
                     <div style="display: none" class="form-group" id="render_shortcode">
                         <label class="col-md-3 control-label text-left">
                             Render Shortcode
                         </label>
                         <div class="col-md-9">
-                            <input type="text" name="render_shortcode" class="form-control" 
-                                value="" readonly>
+                            <input type="text" name="render_shortcode" class="form-control"
+                                   value="" readonly>
                         </div>
                         <div class="col-md-3" style="margin-top: 1rem">
                             <button id="copyText" class="btn btn-primary">Copy</button>
@@ -71,77 +60,90 @@
     </div>
 </div>
 @push('scripts')
-<script type="text/javascript">
-    let shortCode = '';
-    let categoryIds = '';
-    let limit = 10;
-    let col = 5;
-    let productId = null;
+    <script type="text/javascript">
+        let shortCode = '';
+        let categoryIds = '';
+        let limit = 10;
+        let col = 5;
+        let productId = null;
+        let fptCategoryId = 0;
 
-    $('select[name=shortcode]').change(function(e) {
-        // Product list shortcode
-        if($(this).val() == 'product_list') {
-            $('#additional-options-product-list').show();
-            $('#short_category_box').show('fast');
-        } else {
-            $('#additional-options-product-list').hide();
-        }
+        $('select[name=shortcode]').change(function (e) {
+            // Product list shortcode
+            if ($(this).val() == 'fpt_category') {
+                $('#additional-options-fpt_category').show();
+            } else {
+                $('#additional-options-fpt_category').hide();
+            }
 
-        // Single Product shortcode
-        if($(this).val() == 'single_product') {
-            $('#additional-options-single-product').show()
-        } else {
-            $('#additional-options-single-product').hide()
-        }
-    });
+            // Single Product shortcode
+            if ($(this).val() == 'fpt_service') {
+                $('#additional-options-single-product').show()
+            } else {
+                $('#additional-options-single-product').hide()
+            }
+        });
 
-    $("select[name='shortcode_category_id[]']").change(function(e) {
-        $('#shortcode_product_limit_box').show('fast');
-        categoryIds = $(this).val();
-        $('input[name=render_shortcode]').val(`[product_list category_ids="${categoryIds}" limit="${limit}"][/product_list]`);
-    });
+        $("select[name='shortcode_category_id[]']").change(function (e) {
+            $('#shortcode_product_limit_box').show('fast');
+            categoryIds = $(this).val();
+            $('input[name=render_shortcode]').val(`[product_list category_ids="${categoryIds}" limit="${limit}"][/product_list]`);
+        });
 
-    $('input[name=shortcode_product_col]').change(function(e) {
+        $('input[name=shortcode_product_col]').change(function (e) {
             col = $(this).val();
             $('#shortcode_product_col_box').show('fast');
             $('#render_shortcode').show('fast');
             $('input[name=render_shortcode]').val(`[product_list category_ids="${categoryIds}" limit="${limit}" col="${col}"][/product_list]`);
-    });
+        });
 
-    $('input[name=shortcode_product_limit]').change(function(e) {
-        if(typeof parseInt($(this).val()) === 'number') {
-            limit = $(this).val();
-            $('input[name=render_shortcode]').val(`[product_list category_ids="${categoryIds}" limit="${limit}" col="${col}"][/product_list]`);
-            $('#shortcode_product_col_box').show('fast');
-        }else {
-            $('#render_shortcode').hide('fast');
-        }
-    });
+        $('input[name=shortcode_product_limit]').change(function (e) {
+            if (typeof parseInt($(this).val()) === 'number') {
+                limit = $(this).val();
+                $('input[name=render_shortcode]').val(`[product_list category_ids="${categoryIds}" limit="${limit}" col="${col}"][/product_list]`);
+                $('#shortcode_product_col_box').show('fast');
+            } else {
+                $('#render_shortcode').hide('fast');
+            }
+        });
 
-    // Single product shortcode
-    $('input[name=shortcode_product_id]').change(function () {
-        const productIdInput = $(this).val();
-        if (typeof parseInt(productIdInput) == 'number') {
-            productId = productIdInput;
-            $('input[name=render_shortcode]').val(`[single_product id="${productIdInput}"][/single_product]`);
+        // Single product shortcode
+        $('input[name=shortcode_product_id]').change(function () {
+            const productIdInput = $(this).val();
+            if (typeof parseInt(productIdInput) == 'number') {
+                productId = productIdInput;
+                $('input[name=render_shortcode]').val(`[single_product id="${productIdInput}"][/single_product]`);
+                $('#render_shortcode').show('fast');
+                $('#shortcode-single-product-desc').show('fast');
+            }
+        })
+
+        $('#shortcode_single_product_desc').change(function (e) {
+            const descTxt = encodeURI($(this).val());
+            $('input[name=render_shortcode]').val(`[single_product id="${productId}" desc="${descTxt}"][/single_product]`);
+        })
+
+        // Fpt Category shortcode
+        $('#fpt_category_id').change(function () {
+            fptCategoryId = $(this).val();
+            renderShortcode(
+                `[fpt_category id="${fptCategoryId}"][/fpt_category]`
+            );
+        })
+
+        function renderShortcode(shortcode) {
+            $('input[name=render_shortcode]').val(shortcode);
             $('#render_shortcode').show('fast');
-            $('#shortcode-single-product-desc').show('fast');
         }
-    })
 
-    $('#shortcode_single_product_desc').change(function (e) {
-        const descTxt = encodeURI($(this).val());
-        $('input[name=render_shortcode]').val(`[single_product id="${productId}" desc="${descTxt}"][/single_product]`);
-    })
-
-  $("#copyText").click(function(e) {
-        e.preventDefault();
-        let $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($("input[name=render_shortcode]").val()).select();
-        document.execCommand("copy");
-        $(this).html('Copied');
-        $temp.remove();
-    })
-</script>
+        $("#copyText").click(function (e) {
+            e.preventDefault();
+            let $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($("input[name=render_shortcode]").val()).select();
+            document.execCommand("copy");
+            $(this).html('Copied');
+            $temp.remove();
+        })
+    </script>
 @endpush

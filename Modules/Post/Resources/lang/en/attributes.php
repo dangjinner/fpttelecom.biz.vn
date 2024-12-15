@@ -6,5 +6,6 @@ return [
     'slug' => 'URL',
     'is_active' => 'Status',
     'groups' => 'Categories',
-    'tags'  => 'Tags'
+    'tags'  => 'Tags',
+    'fpt_category_id' => 'Category',
 ];

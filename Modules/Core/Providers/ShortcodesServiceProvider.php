@@ -3,18 +3,8 @@
 namespace Modules\Core\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Core\Shortcodes\SingleProductShortcode;
+use Modules\Core\Shortcodes\FptCategoryShortcode;
 use Shortcode;
-use Modules\Core\Shortcodes\BoxAlertShortcode;
-use Modules\Core\Shortcodes\ToggleShortcode;
-use Modules\Core\Shortcodes\ButtonShortcode;
-use Modules\Core\Shortcodes\GoPricingShortcode;
-use Modules\Core\Shortcodes\ContactFormShortcode;
-use Modules\Core\Shortcodes\CaptionShortcode;
-use Modules\Core\Shortcodes\ViewMoreShortcode;
-use Modules\Core\Shortcodes\InternetFPTShortcode;
-use Modules\Core\Shortcodes\PriceComboShortcode;
-use Modules\Core\Shortcodes\ProductListShortcode;
 
 class ShortcodesServiceProvider extends ServiceProvider
 {
@@ -25,8 +15,7 @@ class ShortcodesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-         Shortcode::register('product_list', ProductListShortcode::class);
-         Shortcode::register('single_product', SingleProductShortcode::class);
+        Shortcode::register('fpt_category', FptCategoryShortcode::class);
     }
 
     /**

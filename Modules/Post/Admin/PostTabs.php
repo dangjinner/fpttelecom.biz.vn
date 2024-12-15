@@ -4,6 +4,7 @@ namespace Modules\Post\Admin;
 
 use Modules\Admin\Ui\Tab;
 use Modules\Admin\Ui\Tabs;
+use Modules\FptService\Entities\FptCategory;
 use Modules\Group\Entities\Group;
 
 class PostTabs extends Tabs
@@ -13,6 +14,7 @@ class PostTabs extends Tabs
         $this->group('post_information', trans('post::posts.tabs.group.post_information'))
             ->active()
             ->add($this->general())
+            ->add($this->shortcode())
             ->add($this->images())
             ->add($this->seo());
     }
@@ -25,6 +27,16 @@ class PostTabs extends Tabs
             $tab->fields(['name']);
             $tab->view('post::admin.posts.tabs.general',[
                 'groups' => Group::treeList(),
+            ]);
+        });
+    }
+
+    private function shortcode()
+    {
+        return tap(new Tab('shortcode', trans('post::posts.tabs.shortcode')), function (Tab $tab) {
+            $tab->weight(5);
+            $tab->view('post::admin.posts.tabs.shortcode',[
+                'fptCategories' => FptCategory::treeList(),
             ]);
         });
     }
