@@ -4,6 +4,7 @@ namespace Modules\Menu\Admin;
 
 use Modules\Admin\Ui\Tab;
 use Modules\Admin\Ui\Tabs;
+use Modules\FptService\Entities\FptCategory;
 use Modules\Page\Entities\Page;
 use Modules\Menu\Entities\MenuItem;
 use Modules\Category\Entities\Category;
@@ -34,7 +35,8 @@ class MenuItemTabs extends Tabs
                 'categories' => $this->categories(),
                 'pages' => $this->pages(),
                 'parentMenuItems' => $this->parentMenuItems(),
-                'groups'        => $this->groups_cat()
+                'groups'        => $this->groups_cat(),
+                'fptCategories' => FptCategory::treeList()
             ]);
         });
     }

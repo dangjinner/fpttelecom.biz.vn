@@ -10,6 +10,10 @@
             {{ Form::select('category_id', trans('menu::attributes.category_id'), $errors, $categories, $menuItem, ['required' => true]) }}
         </div>
 
+        <div class="link-field fpt_category-field {{ old('type', $menuItem->type ?? 'fpt_category') !== 'fpt_category' ? 'hide' :'' }}">
+            {{ Form::select('fpt_category_id', trans('menu::attributes.fpt_category_id'), $errors, $fptCategories, $menuItem, ['required' => true]) }}
+        </div>
+
         {{-- <div class="link-field group-field {{ old('type', $menuItem->type) !== 'group' ? 'hide' :'' }}">
             {{ Form::select('group_id', trans('menu::attributes.group_id'), $errors, $groups, $menuItem, ['required' => true]) }}
         </div> --}}

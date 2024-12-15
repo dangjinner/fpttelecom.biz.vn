@@ -23,8 +23,9 @@ class SaveMenuItemRequest extends Request
     {
         return [
             'name' => 'required',
-            'type' => ['required', Rule::in('category', 'page', 'url', 'group')],
+            'type' => ['required', Rule::in('category', 'page', 'url', 'group', 'fpt_category')],
             'category_id' => 'required_if:type,category',
+            'fpt_category_id' => 'required_if:type,fpt_category|exists:fpt_categories,id',
             'page_id' => 'required_if:type,page',
             'url' => 'required_if:type,url',
             'group_id' => 'required_if:type,group',

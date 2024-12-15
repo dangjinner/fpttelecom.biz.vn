@@ -12,5 +12,6 @@ return [
     'is_fluid' => 'Fluid Menu',
     'is_active' => 'Status',
     'description'   => 'Description',
-    'expand_desc' => 'Expand Description'
+    'expand_desc' => 'Expand Description',
+    'fpt_category_id' => 'FPT Category',
 ];

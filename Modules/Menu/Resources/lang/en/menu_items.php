@@ -15,6 +15,7 @@ return [
             'category' => 'Category',
             'page' => 'Page',
             'url' => 'URL',
+            'fpt_category' => 'FPT Category',
             // 'group' => 'Group',
         ],
         'targets' => [

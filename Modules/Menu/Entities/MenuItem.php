@@ -2,6 +2,7 @@
 
 namespace Modules\Menu\Entities;
 
+use Modules\FptService\Entities\FptCategory;
 use TypiCMS\NestableTrait;
 use Modules\Page\Entities\Page;
 use Modules\Media\Entities\File;
@@ -41,7 +42,8 @@ class MenuItem extends Model
         'position',
         'is_root',
         'is_fluid',
-        'is_active'
+        'is_active',
+        'fpt_category_id'
     ];
 
     /**
@@ -178,6 +180,31 @@ class MenuItem extends Model
     }
 
     /**
+     * Determine if the menu item type is fpt category.
+     *
+     * @return bool
+     */
+    public function isFptCategoryType()
+    {
+        return $this->type === 'fpt_category';
+    }
+
+    public function fptCategory()
+    {
+        return $this->belongsTo(FptCategory::class, 'fpt_category_id');
+    }
+
+    public function fptCategoryUrl()
+    {
+        $fptCategory = $this->fptCategory()->first();
+        if ($fptCategory) {
+            return $fptCategory->url();
+        }
+
+        return '';
+    }
+
+    /**
      * Determine if the menu item type is category.
      *
      * @return bool
@@ -216,6 +243,10 @@ class MenuItem extends Model
     {
         if ($this->isCategoryType()) {
             return optional($this->category)->url();
+        }
+
+        if ($this->isFptCategoryType()) {
+            return $this->fptCategoryUrl();
         }
 
         // if ($this->isGroupType()) {
