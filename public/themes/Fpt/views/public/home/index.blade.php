@@ -44,24 +44,7 @@
             </div>
             <div class="box_package silder_package">
                 @foreach($service1['services'] as $service)
-                    <div class="package_item">
-                        <div class="img"><img src="{{ $service->logo->path }}" alt=""></div>
-                        <div class="package_content">
-                            <div class="title">
-                                <h3>{{ $service->name }}</h3>
-                            </div>
-                            <div class="price">
-                                <span class="icon-info">Chỉ từ <img src="{{ v(Theme::url('assets/img/icon/info-circle.svg')) }}" alt=""></span>
-                                <p>{{ $service->price->format() }}<span>/ {{ $service->billing_cycle }}</span></p>
-                            </div>
-                            <div class="list_item">
-                              {!! $service->features !!}
-                            </div>
-                        </div>
-                        <div class="package_btn">
-                            <a href="{{ $service->registerUrl() }}" class="btn_dk">Đăng ký ngay</a>
-                        </div>
-                    </div>
+                    @include('public.partials.fpt_service')
                 @endforeach
             </div>
         </div>
