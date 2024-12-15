@@ -22,7 +22,7 @@
                             <select name="shortcode" class="form-control form-select">
                                 <option value="">Select</option>
                                 <option value="fpt_category">FPT Category</option>
-                                <option value="fpt_service">FPT Service</option>
+{{--                                <option value="fpt_service">FPT Service</option>--}}
                             </select>
                         </div>
                     </div>
