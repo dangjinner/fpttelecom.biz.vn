@@ -217,4 +217,19 @@ class Post extends Model
     {
         return Group::where('slug', 'chuong-trinh-khuyen-mai')->first()->posts();
     }
+
+    public function getDescriptionAttribute()
+    {
+        // Loại bỏ các thẻ không mong muốn, ví dụ: <div class="widget-toc">...</div>
+        $content = $this->content;
+
+        // Loại bỏ thẻ widget-toc bằng Regular Expression
+        $content = preg_replace('/<div[^>]*class="widget-toc"[^>]*>.*?<\/div>/s', '', $content);
+
+        // Loại bỏ các thẻ HTML không cần thiết
+        $content = strip_tags($content, '<p><br><b><i><u><strong><em>'); // Giữ lại các thẻ cần thiết
+
+        // Giới hạn số ký tự hoặc đoạn văn bản nếu cần
+        return Str::limit($content, 300, '...');
+    }
 }

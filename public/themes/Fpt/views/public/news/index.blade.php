@@ -97,7 +97,7 @@
                                 <span>{{ $posts[0]->dateTime }}</span>
                             </div>
                             <div class="content">
-                                {!! $posts[0]->content !!}
+                                {!! $posts[0]->description !!}
                             </div>
                             <a href="{{ $posts[0]->url() }}" class="read_more"> <i class="fas fa-angle-right"></i> Tìm
                                 hiểu</a>
@@ -129,7 +129,7 @@
                                         <span>{{ $post->dateTime }}</span>
                                     </div>
                                     <div class="content">
-                                        {!! $post->content !!}
+                                        {!! $post->description !!}
                                     </div>
                                     <a href="{{ $post->url() }}" class="read_more"> <i class="fas fa-angle-right"></i>
                                         Tìm hiểu</a>
