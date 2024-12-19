@@ -105,6 +105,11 @@
     cursor: pointer;
 }
 
+.main_package .package_item .package_content {
+    height: auto;
+    min-height: 400px;
+}
+
 @media screen and (max-width: 768px) {
     .page_news .container, .main_breadcrumb {
         max-width: fit-content;
