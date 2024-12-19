@@ -23,6 +23,7 @@ class SaveFptCategoryRequest extends Request
         return [
             'name' => 'required|string',
             'description' => 'nullable|string',
+            'info' => 'nullable|string',
         ];
     }
 }

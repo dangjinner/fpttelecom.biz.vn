@@ -22,5 +22,6 @@ return [
     'room_number' => 'Room Number',
     'meta_title' => 'Meta Title',
     'meta_description' => 'Meta Description',
-    'meta_keyword' => 'Meta Keyword'
+    'meta_keyword' => 'Meta Keyword',
+    'info' => 'Info',
 ];

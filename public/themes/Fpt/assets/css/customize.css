@@ -110,6 +110,27 @@
     min-height: 400px;
 }
 
+.extend_package * {
+    margin: revert;
+    padding: revert;
+    font-size: revert;
+    font: revert;
+    vertical-align: revert;
+}
+
+.extend_package *:not(.main_package):not(.main_package *) {
+    padding: 0 15px;
+}
+
+@media screen and (min-width: 1500px) {
+    .extend_package {
+        max-width: 1440px;
+        width: 1440px;
+        margin: auto;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .page_news .container, .main_breadcrumb {
         max-width: fit-content;

@@ -31,7 +31,7 @@
     </div>
     <div class="main_package" style="margin-bottom: 100px;">
         <div class="package_title">
-           {!! $fptCategory->description !!}
+            {!! $fptCategory->description !!}
         </div>
         <div class="box_package silder_package">
             @foreach($fptCategory->fptServices as $service)
@@ -39,4 +39,9 @@
             @endforeach
         </div>
     </div>
+    @if(!empty($fptCategory->info))
+        <div class="extend_package">
+            {!! $fptCategory->info !!}
+        </div>
+    @endif
 @endsection

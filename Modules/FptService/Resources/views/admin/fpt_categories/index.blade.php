@@ -52,6 +52,7 @@
 
                                         {{ Form::text('name', trans('fptservice::attributes.name'), $errors, null, ['required' => true]) }}
                                         {{ Form::wysiwyg('description', trans('fptservice::attributes.description'), $errors, null, ['required' => false]) }}
+                                        {{ Form::wysiwyg('info', trans('fptservice::attributes.info'), $errors, null, ['required' => false]) }}
                                         {{ Form::checkbox('is_searchable', trans('fptservice::attributes.is_searchable'), trans('fptservice::fpt_categories.form.show_this_fpt_category_in_search_box'), $errors) }}
                                         {{ Form::checkbox('is_active', trans('fptservice::attributes.is_active'), trans('fptservice::fpt_categories.form.enable_the_fpt_category'), $errors) }}
                                     </div>

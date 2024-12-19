@@ -11,5 +11,5 @@ class FptCategoryTranslation extends TranslationModel
      *
      * @var array
      */
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'info'];
 }

@@ -46,7 +46,7 @@ class FptCategory extends Model
      *
      * @var array
      */
-    public $translatedAttributes = ['name', 'description'];
+    public $translatedAttributes = ['name', 'description', 'info'];
 
     /**
      * The attribute that will be slugged.
