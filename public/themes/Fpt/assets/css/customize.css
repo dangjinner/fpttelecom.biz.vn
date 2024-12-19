@@ -118,6 +118,11 @@
     vertical-align: revert;
 }
 
+.extend_package .main_package * {
+    margin: initial;
+}
+
+
 .extend_package *:not(.main_package):not(.main_package *) {
     padding: 0 15px;
 }
