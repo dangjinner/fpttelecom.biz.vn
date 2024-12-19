@@ -3,10 +3,16 @@
 @section('content')
     <div class="main_banner">
         <div class="page_banner">
-            <img src="{{ $fptCategory->banner->path ?? $fptCategory->parent->banner->path }}" alt="banner">
+            @php
+                $bannerPath = $fptCategory->banner->path;
+                if (empty($bannerPath) && !empty($fptCategory->parent)) {
+                    $bannerPath = $fptCategory->parent->banner->path;
+                }
+            @endphp
+            <img src="{{ $bannerPath }}" alt="banner">
         </div>
         <div class="page_banner-mb">
-            <img src="{{ $fptCategory->banner->path ?? $fptCategory->parent->banner->path }}" alt="banner">
+            <img src="{{ $bannerPath }}" alt="banner">
         </div>
     </div>
     <div class="breadcrumb_sv">

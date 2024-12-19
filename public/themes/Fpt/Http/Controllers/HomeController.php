@@ -66,9 +66,13 @@ class HomeController
             return redirect()->route('fpt.services.category', ['slug' => $fptCategory->slug]);
         }
 
-        $fptCategories = $fptCategory->parent->children()
-            ->where('is_searchable', true)
-            ->get();
+        $fptCategories = [];
+
+        if ($fptCategory->parent) {
+            $fptCategories = $fptCategory->parent->children()
+                ->where('is_searchable', true)
+                ->get();
+        }
 
         return view('public.services.category', compact(
                 'fptCategory',

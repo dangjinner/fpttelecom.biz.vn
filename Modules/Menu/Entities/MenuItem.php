@@ -302,4 +302,20 @@ class MenuItem extends Model
             ->setIndent('¦–– ')
             ->listsFlattened('name');
     }
+
+    public function getParents()
+    {
+        $parentId = $this->parent_id;
+        $parentsMenu = [];
+        $parentsMenu[] = $this;
+        while($parentId !== null) {
+            $parentMenu = MenuItem::find($parentId);
+            if($parentMenu == null) {
+                break;
+            }
+            $parentsMenu[] = $parentMenu;
+            $parentId = $parentMenu->parent_id;
+        }
+        return array_reverse($parentsMenu);
+    }
 }
