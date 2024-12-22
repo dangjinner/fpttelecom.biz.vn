@@ -140,6 +140,14 @@
     .page_news .container, .main_breadcrumb {
         max-width: fit-content;
     }
+
+    .page_content .article_content img {
+        width: 100% !important;
+    }
+
+    .main_package .package_item .price span.icon-info img {
+        width: 23px !important;
+    }
 }
 
 
