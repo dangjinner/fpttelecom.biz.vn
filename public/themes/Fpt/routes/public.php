@@ -16,5 +16,10 @@ Route::get('/provinces/{provinceId}/districts/{districtId}/wards', 'HomeControll
 
 Route::get('/{slug}', 'HomeController@fptCategory')->name('fpt.services.category');
 
+Route::get('/san-pham/{slug}', 'ProductController@show')->name('fpt.products.show');
+Route::get('/ajax/categories/{slug}', 'ProductController@ajaxCategory')->name('fpt.products.ajaxCategory');
+
+
+
 
 

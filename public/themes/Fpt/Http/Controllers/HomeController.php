@@ -6,6 +6,8 @@ use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\SEOTools;
 use HoangPhi\VietnamMap\Models\Ward;
 use Illuminate\Http\Request;
+use Modules\Attribute\Entities\Attribute;
+use Modules\Category\Entities\Category;
 use Modules\Core\Entities\District;
 use Modules\FptService\Emails\SendRegistedCustomerDataMail;
 use Modules\FptService\Entities\FptCategory;
@@ -139,7 +141,11 @@ class HomeController
 
     public function pageDetails($slug)
     {
-        $page = Page::where('slug', $slug)->firstOrFail();
+        $page = Page::where('slug', $slug)->first();
+
+        if (!$page) {
+            return $this->category($slug);
+        }
 
         SEOMeta::setTitle($page->meta->meta_title ?? $page->name);
         SEOMeta::setDescription($page->meta->meta_description);
@@ -148,6 +154,98 @@ class HomeController
         SEOTools::twitter()->setSite(route('home'));
 
         return view('public.pages.show', compact('page'));
+    }
+
+    public function category($slug)
+    {
+        $category = Category::findBySlug($slug);
+        $category->load('children', 'slider');
+        $breadcrumb = $this->getCategoryBreadCrumbCat($category);
+        $featuredProducts = $category->products()->limit(5)->get();
+        $request = request();
+
+        if (!$request->get('sort')) {
+            $request['sort'] = 'bestsale';
+        }
+
+        $fromPrice = $request->fromPrice;
+        $toPrice = $request->toPrice;
+
+        $attributes = Attribute::all();
+        $brands = [];
+
+        foreach ($category->products()->with('brand')->get() as $product) {
+            if (count($brands) == 0) {
+                $brands[] = $product->brand;
+            }
+            $checkUnique = true;
+            foreach ($brands as $brand) {
+                if ($product->brand->id === $brand->id) {
+                    $checkUnique = false;
+                    break;
+                }
+            }
+            if ($checkUnique && $product->brand_id !== null) $brands[] = $product->brand;
+        }
+
+        $products = $category->products()->filterBrand($request->brand)
+            ->filterCategory($request->category)
+            ->filterContactPrice($request->contactPrice)
+            ->sortBy($request->orderBy)
+            ->price($fromPrice, $toPrice);
+
+        foreach ($request->all() as $key => $req) {
+            foreach ($attributes as $attribute) {
+                if ($attribute->slug == $key) {
+                    foreach ($attribute->values as $value) {
+                        if ($value->id == $req) {
+                            $productsId = [];
+                            foreach ($value->products()->get() as $attributeValue) {
+                                $productsId[] = $attributeValue->product_id;
+                            }
+                            $products = $products->whereIn('id', $productsId);
+                        }
+                    }
+                }
+            }
+        }
+
+        $posts = Post::latest()->limit(8)->get();
+
+        $products = $products->paginate(20);
+
+        $productsArr = $products->toArray();
+
+        $data = [
+            'category' => $category,
+            'products' => $products,
+            'productsArr' => $productsArr,
+            'brands' => $brands,
+            'breadcrumb' => $breadcrumb,
+            'featuredProducts' => $featuredProducts,
+            'attributes' => Attribute::all(),
+            'posts' => $posts
+        ];
+
+        SEOMeta::setTitle($category->name);
+        SEOMeta::setDescription($category->name);
+        SEOMeta::addKeyword($category->name);
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::twitter()->setSite(route('home'));
+
+        return view('public.products.category', $data);
+    }
+
+    private function getCategoryBreadCrumbCat(Category $category)
+    {
+        $breadcrumb = '';
+        if($category->parent)
+        {
+            $breadcrumb .= $this->getCategoryBreadCrumbCat($category->parent);
+            $breadcrumb .= "<a href='". route('fpt.services.category', ['slug' => $category->parent->slug]) ."'>{$category->parent->name}</a><span> » </span>";
+        }
+
+        return $breadcrumb;
     }
 
     public function registerService(Request $request)
