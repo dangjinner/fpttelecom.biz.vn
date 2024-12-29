@@ -94,7 +94,7 @@ class Category extends Model
 
     public function url()
     {
-        return route('product.category', ['slug' => $this->slug]);
+        return route('fpt.services.category', ['slug' => $this->slug]);
     }
 
     public function parent()
@@ -215,5 +215,15 @@ class Category extends Model
     public function slider2()
     {
         return $this->belongsTo(Slider::class, 'slider_2_id');
+    }
+
+    public function scopeSearchable($query)
+    {
+        return $query->where('is_searchable', true);
+    }
+
+    public function isSearchable()
+    {
+        return $this->is_searchable === true;
     }
 }

@@ -3,6 +3,7 @@
 namespace Themes\Fpt\Http\ViewComposer;
 
 use Illuminate\Support\Facades\Cache;
+use Modules\Cart\Facades\Cart;
 use Modules\Category\Entities\Category;
 use Modules\Media\Entities\File;
 use Modules\Menu\MegaMenu\MegaMenu;
@@ -24,6 +25,7 @@ class FptViewComposer
             'primaryMenu' => $this->getPrimaryMenu(),
             'noticeGovImage' => $this->getMedia(setting('fpt_footer_noticed_gov_image')),
             'footerMenu' => $this->getFooterMenu(),
+            'countCartItems' => count(Cart::items())
         ]);
     }
 

@@ -509,8 +509,8 @@ class Product extends Model
 
     public function url()
     {
-        if (\Route::has('product.single') && $this->slug) {
-            return route('product.single', ['slug' => $this->slug]);
+        if (\Route::has('fpt.products.show') && $this->slug) {
+            return route('fpt.products.show', ['slug' => $this->slug]);
         }
         return '';
     }

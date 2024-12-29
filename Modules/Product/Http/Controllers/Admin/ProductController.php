@@ -47,25 +47,27 @@ class ProductController
      */
     public function store(Request $request)
     {
-        if ($request->has('review_questions_id')
-            && $request->review_questions_id != null
-            && count($request->review_questions_id) > 0 ) {
+//        for($i = 0; $i < 30; $i++) {
+            if ($request->has('review_questions_id')
+                && $request->review_questions_id != null
+                && count($request->review_questions_id) > 0 ) {
                 $request->merge([
                     'review_questions_id' => json_encode($this->getRequest('store')->review_questions_id),
                 ]);
-        }
+            }
 
 
-        $this->disableSearchSyncing();
+            $this->disableSearchSyncing();
 
-        $entity = $this->getModel()->create(
-            $this->getRequest('store')->all()
-        );
-        $this->searchable($entity);
+            $entity = $this->getModel()->create(
+                $this->getRequest('store')->all()
+            );
+            $this->searchable($entity);
 
-        if (method_exists($this, 'redirectTo')) {
-            return $this->redirectTo($entity);
-        }
+            if (method_exists($this, 'redirectTo')) {
+                return $this->redirectTo($entity);
+            }
+//        }
 
         return redirect()->route("{$this->getRoutePrefix()}.index")
             ->withSuccess(trans('admin::messages.resource_saved', ['resource' => $this->getLabel()]));

@@ -70,11 +70,19 @@
 
                 </ul>
             </div>
-            <div class="box_shearch">
-                <button>
-                    <img src="{{ v(Theme::url('assets/img/search-icon.svg')) }}" alt="Tìm kiếm">
-                </button>
-            </div>
+           <div class="right_actions">
+{{--               <div class="box_shearch">--}}
+{{--                   <button>--}}
+{{--                       <img src="{{ v(Theme::url('assets/img/search-icon.svg')) }}" alt="Tìm kiếm">--}}
+{{--                   </button>--}}
+{{--               </div>--}}
+               <a href="{{ route('cart.index') }}" style="position: relative">
+                   <img src="{{ v(Theme::url('assets/img/icon/shopping-bag.png')) }}" alt="cart">
+                   <div class="count_cart_items">
+                       {{ $countCartItems }}
+                   </div>
+               </a>
+           </div>
             <form method="GET" action="" accept-charset="UTF-8">
                 <span class="nav-search-close-button" tabindex="0">✕</span>
                 <div class="nav-search-inner">
@@ -88,11 +96,19 @@
     <div class="menu_mb">
         <nav class="navbar box_menu-mb fixed-top">
             <div class="container-fluid">
-                <div class="box_shearch">
-                    <button>
-                        <img src="{{ v(Theme::url('assets/img/search-icon.svg')) }}" alt="Tìm kiếm">
-                    </button>
-                </div>
+               <div class="cart_icon">
+                   <a href="{{ route('cart.index') }}" style="position: relative">
+                       <img src="{{ v(Theme::url('assets/img/icon/shopping-bag.png')) }}" alt="cart">
+                       <div class="count_cart_items">
+                           {{ $countCartItems }}
+                       </div>
+                   </a>
+               </div>
+{{--                <div class="box_shearch">--}}
+{{--                    <button>--}}
+{{--                        <img src="{{ v(Theme::url('assets/img/search-icon.svg')) }}" alt="Tìm kiếm">--}}
+{{--                    </button>--}}
+{{--                </div>--}}
                 <a class="img-logo" href="#"><img src="{{ v(Theme::url('assets/img/fpt-logo.svg')) }}" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

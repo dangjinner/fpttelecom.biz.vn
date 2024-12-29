@@ -105,6 +105,7 @@ export default class {
 
         $('#slug').val(category.slug);
         $('#slider_id').val(category.slider_id);
+        $('#slider_2_id').val(category.slider_2_id);
 
         if (category.intro) {
             tinyMCE.get('intro').setContent(category.intro);

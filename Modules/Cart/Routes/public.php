@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('cart', 'CartController@index')->name('cart.index');
+//Route::get('cart', 'CartController@index')->name('cart.index');
 Route::any('cart/items', 'CartItemController@store')->name('cart.items.store');
 Route::post('cart/jax/items', 'CartItemController@ajaxStore')->name('cart.items.store.ajax');
 Route::put('cart/items/{cartItemId}', 'CartItemController@update')->name('cart.items.update');
