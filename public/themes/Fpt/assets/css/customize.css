@@ -249,6 +249,12 @@ img {
     font-size: 1.25rem;
 }
 
+.box_form .full_form {
+    max-width: 100%;
+    flex-basis: initial;
+    width: 100%;
+}
+
 @media screen and (min-width: 1500px) {
 .extend_package {
     max-width: 1440px;

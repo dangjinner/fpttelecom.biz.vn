@@ -3,6 +3,7 @@
 namespace Themes\Fpt\Http\Controllers;
 
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Illuminate\Support\Facades\Session;
 use Modules\Cart\Http\Middleware\CheckCartStock;
 use Modules\Cart\Http\Middleware\RedirectIfCartIsEmpty;
 use Illuminate\Routing\Controller;
@@ -15,11 +16,11 @@ use Modules\Coupon\Exceptions\MaximumSpendException;
 use Modules\Coupon\Exceptions\MinimumSpendException;
 use Mail;
 use Modules\Core\Entities\District;
+use Modules\Order\Jobs\HandleNewOrderJob;
 use Modules\Payment\Facades\Gateway;
 use Modules\Province\Entities\Province;
-use Themes\Anan\Emails\NewOrder;
-use Themes\Anan\Http\Requests\CheckoutRequest;
-use Themes\Anan\Http\Services\OrderService;
+use Themes\Fpt\Http\Services\OrderService;
+use Themes\Fpt\Http\Requests\CheckoutRequest;
 
 class CartController extends Controller
 {
@@ -74,10 +75,10 @@ class CartController extends Controller
 
     public function payment()
     {
-        $cartItems = Cart::instance();
+        $cart = Cart::instance();
         $gateways = Gateway::all();
         $provinces = Province::all();
-        return view('public.cart.payment', compact('cartItems', 'gateways', 'provinces'));
+        return view('public.cart.payment', compact('cart', 'gateways', 'provinces'));
     }
 
     public function getDistrict($provinceId)
@@ -89,11 +90,11 @@ class CartController extends Controller
     {
         $order = $orderService->create($request);
         Cart::clear();
-        $emails = [$request->email, env('MAIL_USERNAME')];
-        $emails = array_values(array_filter($emails));
-        Mail::to($emails)->send(new NewOrder($order));
-        return view('public.cart.completed', compact('order'));
-    }
 
+        HandleNewOrderJob::dispatch($order);
+
+        Session::put('order', $order);
+        return redirect()->route('cart.completed');
+    }
 }
 

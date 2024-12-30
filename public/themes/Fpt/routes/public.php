@@ -17,6 +17,9 @@ Route::get('/provinces/{provinceId}/districts/{districtId}/wards', 'HomeControll
 Route::prefix('gio-hang')->name('cart.')->group(function () {
     Route::get('/', 'CartController@index')->name('index');
     Route::post('/update', 'CartController@update')->name('update');
+    Route::get('/thanh-toan', 'CartController@payment')->name('payment');
+    Route::post('/thanh-toan', 'CartController@postCheckout')->name('postCheckout');
+    Route::get('/thanh-toan/hoan-tat', 'CartController@completed')->name('completed');
 });
 
 Route::get('/san-pham/{slug}', 'ProductController@show')->name('fpt.products.show');

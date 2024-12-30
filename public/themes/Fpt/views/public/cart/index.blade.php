@@ -24,6 +24,10 @@
 
         .cart_empty {
         }
+
+        .cart_total {
+            font-weight: 700;
+        }
     </style>
 @endpush
 
@@ -76,6 +80,7 @@
                         </div>
                         <div class="cart_actions">
                             <a href="{{ route('home') }}" class="btn btn-secondary"> {{ "Quay lại trang chủ" }}</a>
+{{--                            <button class="btn btn-danger btn-clear-cart">Clear cart</button>--}}
                             <button class="btn btn-success btn-update-cart">Cập nhật giỏ hàng</button>
                         </div>
                     </div>
@@ -89,16 +94,24 @@
                                     <span>Tạm tính:</span>
                                     <span>{{ $cart->subTotal()->format() }}</span>
                                 </div>
-                                <div class="d-flex justify-content-between mb-3">
-                                    <span>Tổng cộng:</span>
-                                    <span><strong>{{ $cart->total()->format() }}</strong></span>
+                                <div class="cart_coupon">
+                                    @if($cart->hasCoupon())
+                                        <div class="d-flex justify-content-between mb-3 ">
+                                            <span class="coupon_code">Mã giảm giá:</span>
+                                            <span class="coupon_value">{{ $cart->coupon()->value()->format() }}</span>
+                                        </div>
+                                    @endif
                                 </div>
-                                <button class="btn btn-primary w-100 mb-3">Đặt hàng</button>
+                                <div class="d-flex justify-content-between mb-3 cart_total">
+                                    <span>Tổng cộng:</span>
+                                    <span class="cart_total_value">{{ $cart->total()->format() }}</span>
+                                </div>
+                                <a href="{{ route('cart.payment') }}" class="btn btn-primary w-100 mb-3">Đặt hàng</a>
 
                                 <h5 class="mb-3">Thêm mã giảm giá</h5>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Nhập mã giảm giá">
-                                    <button class="btn btn-outline-secondary">Áp dụng</button>
+                                    <input type="text" class="form-control" name="coupon_code" placeholder="Nhập mã giảm giá">
+                                    <button class="btn btn-outline-secondary btn-apply-coupon">Áp dụng</button>
                                 </div>
                             </div>
                         </div>
@@ -131,6 +144,7 @@
 @endsection
 
 @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function () {
             $('.btn-update-cart').click(function (e) {
@@ -173,6 +187,58 @@
                     }
                 });
             });
+
+            $('.btn-apply-coupon').click(function (e) {
+                e.preventDefault();
+                const url = "{{ route('cart.coupon.store') }}";
+                const coupon = $('input[name=coupon_code]').val();
+
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    data: {
+                        coupon,
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    success: function (response) {
+                        $('.cart_coupon').html(`
+                          <div class="d-flex justify-content-between mb-3 ">
+                            <span class="coupon_code">Mã giảm giá:</span>
+                            <span class="coupon_value">${response.coupon.value.formatted}</span>
+                          </div>
+                        `);
+
+                        $('.cart_total_value').text(response.total.formatted);
+
+                        $('input[name=coupon_code]').val('');
+
+                        Swal.fire({
+                            title: 'Thông báo',
+                            text: 'Áp dụng mã giảm giá thành công!',
+                            icon: 'success'
+                        });
+                    },
+                    error: function (error) {
+                        Swal.fire({
+                            title: 'Thông báo',
+                            text: 'Mã giảm giá không tồn tại!',
+                            icon: 'error'
+                        });
+                    }
+                });
+            });
+
+            $('.btn-clear-cart').click(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: "{{ route('cart.clear.store') }}",
+                    type: 'POST',
+                    success: function () {
+                        window.location.reload();
+                    }
+                })
+            })
         })
     </script>
 @endpush

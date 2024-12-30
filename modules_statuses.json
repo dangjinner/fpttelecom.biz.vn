@@ -16,7 +16,7 @@
     "Option": true,
     "Order": true,
     "Page": true,
-    "Payment": false,
+    "Payment": true,
     "Product": true,
     "Report": true,
     "Review": false,
