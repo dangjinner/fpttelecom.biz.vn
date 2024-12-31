@@ -2,6 +2,7 @@
 
 namespace Themes\Fpt\Http\Services;
 
+use HoangPhi\VietnamMap\Models\Ward;
 use Modules\Cart\Facades\Cart;
 use Modules\Core\Entities\District;
 use Modules\Order\Entities\Order;
@@ -49,11 +50,12 @@ class OrderService
 
     private function getAddress($request)
     {
-        $province = Province::find($request->province)->name ?? '';
-        $district = District::find($request->district)->name ?? '';
+        $province = Province::find($request->province_id)->name ?? '';
+        $district = District::find($request->district_id)->name ?? '';
+        $ward = Ward::find($request->ward_id)->name ?? '';
         $address = $request->address;
 
-        return "{$address}, {$district}, {$province}";
+        return "{$address}, {$ward}, {$district}, {$province}";
     }
 
     private function extractName($name)

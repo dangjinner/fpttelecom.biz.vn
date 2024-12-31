@@ -33,7 +33,7 @@ class CartController extends Controller
         $this->middleware([
             RedirectIfCartIsEmpty::class,
             CheckCartStock::class,
-        ])->except('index');
+        ])->except('index', 'completed');
     }
 
 
@@ -75,6 +75,7 @@ class CartController extends Controller
 
     public function payment()
     {
+        SEOMeta::setTitle('Thông tin thanh toán');
         $cart = Cart::instance();
         $gateways = Gateway::all();
         $provinces = Province::all();
@@ -95,6 +96,13 @@ class CartController extends Controller
 
         Session::put('order', $order);
         return redirect()->route('cart.completed');
+    }
+
+    public function completed()
+    {
+        SEOMeta::setTitle('Đặt hàng thành công');
+        $order = Session::get('order');
+        return view('public.cart.completed', compact('order'));
     }
 }
 
