@@ -102,6 +102,11 @@ class CartController extends Controller
     {
         SEOMeta::setTitle('Đặt hàng thành công');
         $order = Session::get('order');
+
+        if (empty($order)) {
+            return redirect()->route('home');
+        }
+
         return view('public.cart.completed', compact('order'));
     }
 }
