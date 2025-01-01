@@ -47,6 +47,6 @@
                 { data: 'created', name: 'created_at' },
             ],
         });
-      
+
     </script>
 @endpush

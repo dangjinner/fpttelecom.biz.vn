@@ -25,6 +25,8 @@ Route::prefix('gio-hang')->name('cart.')->group(function () {
 Route::get('/san-pham/{slug}', 'ProductController@show')->name('fpt.products.show');
 Route::get('/ajax/categories/{slug}', 'ProductController@ajaxCategory')->name('fpt.products.ajaxCategory');
 
+Route::get('goi-dich-vu/{slug}', 'FptServiceController@service')->name('fpt.service');
+
 Route::get('/{slug}', 'HomeController@fptCategory')->name('fpt.services.category');
 
 

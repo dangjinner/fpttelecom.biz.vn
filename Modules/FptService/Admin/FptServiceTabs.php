@@ -14,7 +14,8 @@ class FptServiceTabs extends Tabs
             ->active()
             ->add($this->general())
             ->add($this->price())
-            ->add($this->images());
+            ->add($this->images())
+            ->add($this->products());
     }
 
     private function general()
@@ -44,6 +45,14 @@ class FptServiceTabs extends Tabs
             $tab->weight(3);
             $tab->fields(['price']);
             $tab->view('fptservice::admin.fpt_services.tabs.images');
+        });
+    }
+
+    private function products()
+    {
+        return tap(new Tab('products', trans('fptservice::fpt_services.tabs.products')), function (Tab $tab) {
+            $tab->weight(4);
+            $tab->view('fptservice::admin.fpt_services.tabs.products');
         });
     }
 }

@@ -47,7 +47,6 @@
 }
 
 
-
 .scroll_contact .zalo img {
     width: 33px;
 }
@@ -57,7 +56,7 @@
 }
 
 
-.main_package .silder_package .slick-list{
+.main_package .silder_package .slick-list {
     width: 100%;
 }
 
@@ -83,10 +82,10 @@
 }
 
 .main_package .fpt_category_shortcode_slider .package_content ul {
-      padding: 0;
+    padding: 0;
 }
 
-.main_package .fpt_category_shortcode_slider .tooltip-text{
+.main_package .fpt_category_shortcode_slider .tooltip-text {
     padding: 11px 13px;
     font-size: 12px;
     font-weight: 400;
@@ -154,7 +153,7 @@
     gap: 12px;
 }
 
-.box_product .img .product-img-frame{
+.box_product .img .product-img-frame {
     position: absolute;
     top: 0;
     left: 0;
@@ -255,39 +254,134 @@ img {
     width: 100%;
 }
 
-@media screen and (min-width: 1500px) {
-.extend_package {
-    max-width: 1440px;
-    width: 1440px;
-    margin: auto;
+.btn_service_detail {
+    background: none !important;
 }
 
-.main_category .container, .category_content .container {
-    max-width: 1268px;
-    width: 1268px;
-    margin: auto;
+.fpt_service_detail {
+    padding-top: 50px;
 }
+
+.fpt_service_detail .container {
+    max-width: 1140px;
+}
+
+.fpt_service_detail .service_title {
+    text-align: center;
+}
+
+.fpt_service_detail .service_title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 56px;
+    color: var(--primary);
+}
+
+.fpt_service_detail .service_title .service_description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.fpt_service_detail .service_feature {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 calc(50% - 16px);
+    flex: 1 1 calc(50% - 16px);
+    background: rgb(247, 247, 248);
+    padding: 24px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.fpt_service_detail .service_feature h5 {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #3D3D3D;
+}
+
+.fpt_service_detail .service_feature .price-num {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 66px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(5, 147, 235)), to(rgb(16, 87, 203)));
+    background: linear-gradient(90deg, rgb(5, 147, 235) 0%, rgb(16, 87, 203) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fpt_service_detail .service_speed .speed {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 66px;
+    margin-right: 4px;
+    background: -webkit-gradient(linear, left top, right top, from(#F6921E), to(#EB2E0F));
+    background: linear-gradient(90deg, #F6921E 0%, #EB2E0F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fpt_service_detail .service_features {
+    margin: 0 0 35px !important;
+}
+
+.fpt_service_detail .service_items {
+}
+
+.fpt_service_detail .service_item {
+    padding: 15px;
+}
+
+.fpt_service_detail .service_item a {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (min-width: 1500px) {
+    .extend_package {
+        max-width: 1440px;
+        width: 1440px;
+        margin: auto;
+    }
+
+    .main_category .container, .category_content .container {
+        max-width: 1268px;
+        width: 1268px;
+        margin: auto;
+    }
 }
 
 
 @media screen and (max-width: 768px) {
-.page_news .container, .main_breadcrumb {
-    max-width: fit-content;
-}
+    .page_news .container, .main_breadcrumb {
+        max-width: fit-content;
+    }
 
-.page_content .article_content img {
-    width: 100% !important;
-}
+    .page_content .article_content img {
+        width: 100% !important;
+    }
 
-.main_package .package_item .price span.icon-info img {
-    width: 23px !important;
-}
+    .main_package .package_item .price span.icon-info img {
+        width: 23px !important;
+    }
+
+    .fpt_service_detail .service_feature .price-num {
+        font-size: 35px;
+    }
+
+    .fpt_service_detail .service_speed .speed {
+        font-size: 35px;
+    }
 }
 
 
 @media screen and (max-width: 500px) {
-.box_contact-scroll .scroll_contact .call, .box_contact-scroll .scroll_contact .cart, .box_contact-scroll .croll-top {
-     display: block !important;
-}
+    .box_contact-scroll .scroll_contact .call, .box_contact-scroll .scroll_contact .cart, .box_contact-scroll .croll-top {
+        display: block !important;
+    }
 }
 

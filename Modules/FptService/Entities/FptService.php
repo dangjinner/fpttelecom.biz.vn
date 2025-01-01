@@ -2,9 +2,11 @@
 
 namespace Modules\FptService\Entities;
 
+use Illuminate\Support\Facades\Route;
 use Modules\FptService\Admin\FptServiceTable;
 use Modules\Media\Eloquent\HasMedia;
 use Modules\Media\Entities\File;
+use Modules\Product\Entities\Product;
 use Modules\Support\Eloquent\Model;
 use Modules\Support\Eloquent\Sluggable;
 use Modules\Support\Eloquent\Translatable;
@@ -30,6 +32,7 @@ class FptService extends Model
         'price',
         'is_active',
         'fpt_category_id',
+        'speed'
     ];
 
     /**
@@ -122,10 +125,32 @@ class FptService extends Model
     public function saveRelations($attributes = [])
     {
         $this->fptCategories()->sync(array_get($attributes, 'fpt_categories', []));
+        $this->products()->sync(array_get($attributes, 'fpt_service_products', []));
     }
 
     public function registerUrl()
     {
         return route('fpt.register.service', ['service' => $this->slug]);
+    }
+
+    public function url()
+    {
+        if (Route::has('fpt.service')) {
+            return route('fpt.service', ['slug' => $this->slug]);
+        }
+
+        return '';
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'fpt_service_products', 'fpt_service_id', 'product_id');
+    }
+
+    public function productList()
+    {
+        return $this->products()
+            ->withoutGlobalScope('active')
+            ->pluck('product_id');
     }
 }

@@ -28,6 +28,7 @@ class SaveFptServiceRequest extends Request
             'billing_cycle' => 'required|string',
             'promotion_details' => 'nullable|string',
             'price' => 'required|numeric',
+            'speed' => 'nullable|string',
         ];
     }
 }

@@ -21,6 +21,7 @@ return [
         'general' => 'General',
         'price' => 'Price',
         'images' => 'Images',
+        'products' => 'Products',
     ],
     'form' => [
         'enable_service' => 'Enable Service',

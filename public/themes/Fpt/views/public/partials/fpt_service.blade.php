@@ -20,6 +20,7 @@
         </div>
     </div>
     <div class="package_btn">
+        <a class="text-primary btn_service_detail" href="{{ $service->url() }}">Xem chi tiết</a>
         <a href="{{ $service->registerUrl() }}" class="btn_dk">Đăng ký ngay</a>
     </div>
 </div>

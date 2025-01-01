@@ -24,4 +24,5 @@ return [
     'meta_description' => 'Meta Description',
     'meta_keyword' => 'Meta Keyword',
     'info' => 'Info',
+    'speed' => 'Speed',
 ];
