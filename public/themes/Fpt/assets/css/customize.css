@@ -383,5 +383,9 @@ img {
     .box_contact-scroll .scroll_contact .call, .box_contact-scroll .scroll_contact .cart, .box_contact-scroll .croll-top {
         display: block !important;
     }
+
+    .page_news .container, .main_breadcrumb {
+        max-width: 100%;
+    }
 }
 
