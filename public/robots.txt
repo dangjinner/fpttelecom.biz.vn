@@ -1,2 +1,3 @@
 User-agent: *
-Sitemap: https://fpttellecom.vn/sitemap.xml
+Sitemap: https://fpttelecom.biz.vn/sitemap.xml
+Disallow: /dang-ky-thong-tin
