@@ -8,6 +8,7 @@
     {!! SEO::generate() !!}
 
     <link rel="shortcut icon" href="{{ $favicon->path }}" type="image/x-icon" />
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <link rel="stylesheet" href="{{ v(Theme::url('assets/css/bootstrap.min.css')) }}">
     <link rel="stylesheet" href="{{ v(Theme::url("assets/slick-1.8.1/slick/slick.css")) }}">
