@@ -62,7 +62,7 @@
                                 </a>
                                 <div class="mt-3">
                                     <a href="{{ $product->url() }}">{{ $product->name }}</a>
-                                    <a href="{{ $product->url() }}" class="btn btn-primary text-white mt-3">Xem chi tiết</a>
+                                    <a href="{{ $product->url() }}" class="btn btn-orange text-white mt-3">Xem chi tiết</a>
                                 </div>
                             </div>
                         @endforeach

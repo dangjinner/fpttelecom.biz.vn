@@ -361,6 +361,24 @@ img {
     color: black;
 }
 
+.btn-orange {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ff6600; /* Màu cam FPT */
+    --bs-btn-border-color: #ff6600;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #e55b00; /* Màu cam đậm hơn cho hover */
+    --bs-btn-hover-border-color: #cc5200;
+    --bs-btn-focus-shadow-rgb: 255, 102, 0; /* RGB của #ff6600 */
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #cc5200; /* Màu cam đậm hơn nữa cho active */
+    --bs-btn-active-border-color: #b34700;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #ff6600;
+    --bs-btn-disabled-border-color: #ff6600;
+}
+
+
 @media screen and (min-width: 1500px) {
     .extend_package {
         max-width: 1440px;
