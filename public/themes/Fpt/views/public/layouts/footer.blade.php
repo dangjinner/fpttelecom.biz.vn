@@ -79,7 +79,7 @@
     <div class="scroll_contact">
         <ul>
             <li class="zalo"><a target="_blank" href="{{setting('fpt_contact_zalo')}}"><img src="{{ v(Theme::url('assets/img/icon/zalo-icon.png')) }}" alt="zalo"></a></li>
-            <li class="cart"><a href="{{setting('fpt_contact_messenger')}}"><img src="{{ v(Theme::url('assets/img/icon/icon-face-new.png')) }}" alt="Messenger"></a></li>
+            <li class="cart messenger"><a href="{{setting('fpt_contact_messenger')}}"><img src="{{ v(Theme::url('assets/img/icon/icon-face-new.png')) }}" alt="Messenger"></a></li>
 {{--            <li class="chat"><a target="_blank" href="{{setting('fpt_contact_zalo')}}"><img src="{{ v(Theme::url('assets/img/icon/icon-live-chat-new.png')) }}" alt="Chat"></a></li>--}}
             <li class="call"><a href="tel:{{setting('fpt_contact_phone')}}"><img src="{{ v(Theme::url('assets/img/icon/icon-call-new.png')) }}" alt="Phone Contact"></a></li>
         </ul>
