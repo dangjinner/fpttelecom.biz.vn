@@ -343,9 +343,16 @@ img {
     border: 0px;
 }
 
+.next_page ul li:hover a {
+    background-color: #fd6436;
+    color: #fff;
+    border-radius: 50%;
+}
+
 .next_page ul li a {
     border: 0px;
     transition: none;
+    border-radius: 50%;
 }
 
 .fpt_service_detail .service_item a {
