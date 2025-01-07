@@ -31,20 +31,22 @@
                         / tháng
                     </div>
                 </div>
-                <div class="col-lg-6 service_feature d-flex gap-3 align-items-center justify-content-center service_speed">
-                    <div class="img_speed">
-                        <img src="{{ v(Theme::url('assets/img/icon/speed150.png')) }}" alt="speed">
-                    </div>
-                    <div class="speed_info">
-                        <h5>Tốc độ</h5>
-                        <div class="d-flex align-items-center justify-content-center num-speed">
-                            <div class="speed">{{ $fptService->speed ?? '...' }}</div>
-                            <div>
-                                <span>/Mbs</span>
+                @if(!empty($fptService->speed))
+                    <div class="col-lg-6 service_feature d-flex gap-3 align-items-center justify-content-center service_speed">
+                        <div class="img_speed">
+                            <img src="{{ v(Theme::url('assets/img/icon/speed150.png')) }}" alt="speed">
+                        </div>
+                        <div class="speed_info">
+                            <h5>Tốc độ</h5>
+                            <div class="d-flex align-items-center justify-content-center num-speed">
+                                <div class="speed">{{ $fptService->speed ?? '...' }}</div>
+                                <div>
+                                    <span>/Mbs</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
             <div class="mb-5 d-flex justify-content-center">
                 <a href="{{ $fptService->registerUrl() }}" class="btn btn-primary btn-lg">Đăng ký ngay</a>
