@@ -138,7 +138,7 @@
 }
 
 .modify_content *:not(.main_package):not(.main_package *) {
-    padding: 0 15px;
+
 }
 
 .category_content {
