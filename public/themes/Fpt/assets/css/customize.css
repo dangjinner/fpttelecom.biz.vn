@@ -335,6 +335,14 @@ img {
     padding: 15px;
 }
 
+.next_page ul li a {
+    border: 0px;
+}
+.next_page ul li.active span {
+    background-color: #fd6436;
+    border: 0px;
+}
+
 .fpt_service_detail .service_item a {
     font-weight: 600;
     text-decoration: none;
