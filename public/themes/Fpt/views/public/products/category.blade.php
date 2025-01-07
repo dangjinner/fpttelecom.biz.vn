@@ -440,11 +440,12 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-12 col">
                     <div class="box_text">
-                        {!! \Modules\AutoLink\Helpers\RenderAutoLink::handle($category->intro) !!}
                         @if(!$category->intro)
                             <p class="text-center ">
                                 Hiện tại chưa có thông tin mô tả cho danh mục này!
                             </p>
+                        @else
+                            {!! \Modules\AutoLink\Helpers\RenderAutoLink::handle($category->intro) !!}
                         @endif
                     </div>
                 </div>
