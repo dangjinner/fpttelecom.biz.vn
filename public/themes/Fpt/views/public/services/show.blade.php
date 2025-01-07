@@ -60,9 +60,9 @@
                                 <a href="{{ $product->url() }}">
                                     <img src="{{ $product->base_image->path }}" alt="{{$product->name}}"/>
                                 </a>
-                                <div class="mt-3">
+                                <div class="mt-3 d-flex flex-column gap-3">
                                     <a href="{{ $product->url() }}">{{ $product->name }}</a>
-                                    <a href="{{ $product->url() }}" class="btn btn-orange text-white mt-3">Xem chi tiết</a>
+                                    <a href="{{ $product->url() }}" class="btn btn-orange text-white">Xem chi tiết</a>
                                 </div>
                             </div>
                         @endforeach
