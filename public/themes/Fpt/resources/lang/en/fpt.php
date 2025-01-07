@@ -75,7 +75,8 @@ return [
         'fpt_contact_chat' => 'Contact Chat',
         'fpt_contact_phone' => 'Contact Phone',
         'home_page_service_1' => 'Service 1',
-        'fpt_contact_zalo' => 'Contact Zalo'
+        'fpt_contact_zalo' => 'Contact Zalo',
+        'product_hotlines' => 'Sale Hotlines'
     ],
     'tabs' => [
         'group' => [
