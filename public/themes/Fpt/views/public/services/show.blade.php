@@ -28,7 +28,7 @@
                     <div class="price-text">
                         <small class="small-text">Chỉ từ</small>
                         <span class="price-num">{{ $fptService->price->format() }}</span>
-                        / tháng
+                        / {{ $fptService->billing_cycle }}
                     </div>
                 </div>
                 @if(!empty($fptService->speed))

@@ -15,6 +15,7 @@
         @slot('thead')
             <tr>
                 @include('admin::partials.table.select_all')
+                <th>{{ trans('fptservice::fpt_services.table.logo') }}</th>
                 <th>{{ trans('fptservice::fpt_services.table.name') }}</th>
                 <th>{{ trans('fptservice::fpt_services.table.price') }}</th>
                 <th>{{ trans('fptservice::fpt_services.table.status') }}</th>
@@ -30,9 +31,9 @@
             columns: [
                 { data: 'checkbox', orderable: false, searchable: false, width: '3%' },
                 { data: 'logo' },
-                { data: 'name', name: 'name', orderable: true, searchable: true },
+                { data: 'name', name: 'translations.name', orderable: true, searchable: true },
                 { data: 'price', name: 'price', orderable: true, searchable: true },
-                { data: 'status' },
+                { data: 'status', name: 'is_active' },
                 { data: 'created', name: 'created_at' },
             ],
         });
