@@ -343,6 +343,11 @@ img {
     border: 0px;
 }
 
+.next_page ul li a {
+    border: 0px;
+    transition: none;
+}
+
 .fpt_service_detail .service_item a {
     font-weight: 600;
     text-decoration: none;
