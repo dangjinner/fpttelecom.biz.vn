@@ -68,6 +68,41 @@
     vertical-align: revert;
 }
 
+.page_content .article_content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    overflow-x: auto;
+    display: block; /* responsive scroll */
+}
+
+.page_content .article_content table thead {
+    background-color: #f2f2f2;
+}
+
+.page_content .article_content table th,
+.page_content .article_content table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.page_content .article_content table th {
+    font-weight: 600;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.page_content .article_content table tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.page_content .article_content table tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
 .page_content .article_content .main_package * {
     margin: initial;
 }

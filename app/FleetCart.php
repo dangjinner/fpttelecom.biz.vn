@@ -9,7 +9,7 @@ class FleetCart
      *
      * @var string
      */
-    const VERSION = '2.6';
+    const VERSION = '2.7';
 
     /**
      * The envato item ID.
