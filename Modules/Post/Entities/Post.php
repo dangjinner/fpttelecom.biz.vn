@@ -220,16 +220,34 @@ class Post extends Model
 
     public function getDescriptionAttribute()
     {
-        // Loại bỏ các thẻ không mong muốn, ví dụ: <div class="widget-toc">...</div>
         $content = $this->content;
 
-        // Loại bỏ thẻ widget-toc bằng Regular Expression
-        $content = preg_replace('/<div[^>]*class="widget-toc"[^>]*>.*?<\/div>/s', '', $content);
+        // Load HTML bằng DOMDocument
+        libxml_use_internal_errors(true); // Bỏ qua lỗi HTML không hợp lệ
+        $dom = new \DOMDocument();
+        $dom->loadHTML('<?xml encoding="utf-8" ?>' . $content);
 
-        // Loại bỏ các thẻ HTML không cần thiết
-        $content = strip_tags($content, '<p><br><b><i><u><strong><em>'); // Giữ lại các thẻ cần thiết
+        $xpath = new \DOMXPath($dom);
 
-        // Giới hạn số ký tự hoặc đoạn văn bản nếu cần
-        return Str::limit($content, 300, '...');
+        // Loại bỏ các thẻ <div class="widget-toc">
+        foreach ($xpath->query('//div[contains(@class, "widget-toc")]') as $node) {
+            $node->parentNode->removeChild($node);
+        }
+
+        // Lấy nội dung HTML đã xử lý
+        $body = $dom->getElementsByTagName('body')->item(0);
+        $cleanHtml = '';
+        foreach ($body->childNodes as $child) {
+            $cleanHtml .= $dom->saveHTML($child);
+        }
+
+        // Loại bỏ các thẻ không cần thiết, giữ lại 1 số thẻ cơ bản
+        $cleanHtml = strip_tags($cleanHtml, '<p><br><b><i><u><strong><em>');
+
+        // Cắt gọn nội dung theo ký tự nhưng tránh cắt giữa HTML tag
+        $textOnly = strip_tags($cleanHtml); // Tạm bỏ thẻ để cắt gọn văn bản
+        $limitedText = Str::limit(trim($textOnly), 300, '...');
+
+        return $limitedText;
     }
 }
